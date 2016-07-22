@@ -1,0 +1,27 @@
+<div class="clearfix">
+  <div class="pull-right">
+    <% if current_user %>
+      <%= link_to icon_text(current_user.username, 'fa-user'), user_path(current_user), class: 'btn btn-lg' %>
+    <% else %>
+      <%= link_to icon_text('Sign in', 'fa-user'), new_user_session_path, class: 'btn btn-lg' %>
+    <% end %>
+  </div>
+</div>
+
+<div class="text-center home_page">
+  <h4>DHSVAD</h4>
+
+  <p>Intro to Web App Development</p>
+  <h2>Flatchat</h2>
+  <div class="btn-group">
+    <a href="/workshop" class="btn btn-lg">
+      <i class="fa fa-keyboard-o"></i> Workshop
+    </a>
+    <a href="/server" class="btn btn-lg">
+      <i class="fa fa-server"></i> Server
+    </a>
+    <a href="/example_clients/flatchat_go" class="btn btn-lg">
+      <i class="fa fa-tablet"></i> Client
+    </a>
+  </div>
+</div>
