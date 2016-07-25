@@ -6,3 +6,4 @@ ul { list-style-type: square; }
 .devise_form { max-width: 300px; display: inline-block; }
 table th { padding-right: 10px; border-bottom: 1px solid #ccc; }
 table td { padding-right: 10px; }
+pre { max-height: 300px; }

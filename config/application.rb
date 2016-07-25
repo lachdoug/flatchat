@@ -14,6 +14,7 @@ module Flatchat
 
     # ENV['DISABLE_SPRING'] = '1'
 
+    ActionCable.server.config.disable_request_forgery_protection = true
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
