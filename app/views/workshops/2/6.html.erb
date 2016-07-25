@@ -1,28 +1,21 @@
-<%= back_link('2/4') %>
-<small>2-5</small>
-<%= forward_link('2/6', '') %>
+<%= back_link('2/5') %>
+<small>2-6</small>
+<%= forward_link('2/7', '') %>
 
-<h1>Fonts and icons</h1>
-
-https://fonts.google.com/
-
-<link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
-
-
+<h1>Fonts</h1>
 
 <h3><%= step %></h3>
-<p><a href="http://fontawesome.io"
-      target="flatchat_workshop">Font Awesome</a></p>
+<p><a href="https://fonts.google.com/specimen/Chewy?query=chewy"
+      target="flatchat_workshop">Google Fonts - Chewy</a></p>
 
 <h3><%= step %></h3>
 <p>Add to <code>&lt;head&gt;</code></p>
 <pre>
-&lt;link rel="stylesheet" href="assets/font-awesome-4.6.3/css/font-awesome.min.css"&gt;
+&lt;link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet"&gt;
 </pre>
 
 <h3><%= step %></h3>
-<p>Replace <code>&lt;h3&gt;Rooms&lt;/h3&gt;</code> with:</p>
+<p>Add bottom of 'application.css':</p>
 <pre>
-&lt;h3&gt;&lt;i class="fa fa-users"&gt;&lt;/i&gt; Rooms&lt;/h3&gt;
+.message_body { font-family: 'Chewy', cursive; }
 </pre>
-<p>Add icon 'fa-comments-o' to <code>&lt;h3&gt;Messages&lt;/h3&gt;</code>.</p>

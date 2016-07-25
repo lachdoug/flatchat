@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
 
+gem 'redis'
+gem 'mysql2'
+
 gem 'devise'
-gem "font-awesome-rails" #, git: "https://github.com/bokmann/font-awesome-rails.git"
+gem 'font-awesome-rails' #, git: "https://github.com/bokmann/font-awesome-rails.git"
 gem 'bootstrap-sass'
 gem 'twitter-bootstrap-rails-confirm'
 gem 'redcarpet' # Markdown
