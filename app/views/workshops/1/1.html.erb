@@ -1,14 +1,20 @@
-<h1>Browser inspector</h1>
+<%= back_link(nil) %>
+<small>1-1</small>
+<%= forward_link('1/2', 'Manipulate elements') %>
 
-<h3>1</h3>
+<h1> Browser inspector</h1>
+
+<h3><%= step %></h3>
 <p>Go to the school web page <a href="http://www.dulwich-h.schools.nsw.edu.au/" target="dhhs">DHHS</a>.</p>
 
-<h3>2</h3>
+<h3><%= step %></h3>
 <p>Open browser inspector.</p>
 <ul>
-  <li><a href="https://developer.mozilla.org/en/docs/Tools/Page_Inspector">Firefox</a></li>
-  <li><a href="https://developer.microsoft.com/en-us/microsoft-edge/platform/documentation/f12-devtools-guide/">Explorer</a></li>
-  <li><a href="https://developer.apple.com/library/mac/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/GettingStarted/GettingStarted.html">Safari</a></li>
-  <li><a href="https://developer.chrome.com/devtools">Chrome</a></li>
-
-<%= link_to icon_text('Next: Manipulate elements', 'fa-arrow-right'), workshop_path(page: '1/2'), class: 'btn btn-info pull-right' %>
+  <li><a href="https://developer.mozilla.org/en/docs/Tools/Page_Inspector"
+        target="flatchat_workshop">Firefox</a></li>
+  <li><a href="https://developer.microsoft.com/en-us/microsoft-edge/platform/documentation/f12-devtools-guide/"
+        target="flatchat_workshop">Explorer</a></li>
+  <li><a href="https://developer.apple.com/library/mac/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/GettingStarted/GettingStarted.html"
+        target="flatchat_workshop">Safari</a></li>
+  <li><a href="https://developer.chrome.com/devtools"
+        target="flatchat_workshop">Chrome</a></li>

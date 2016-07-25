@@ -1,0 +1,153 @@
+<%= back_link('2/2') %>
+<small>2-3</small>
+<%= forward_link('2/4', 'Images') %>
+
+<h1>CSS</h1>
+
+<h3><%= step %></h3>
+<p>Selectors:
+<ul>
+  <li>Tag name - no prefix</li>
+  <li>Class - '.' prefix</li>
+  <li>ID - '#' prefix</li>
+</ul></p>
+
+<h3><%= step %></h3>
+<p>Change file to:</p>
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;title&gt;Flatchat&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;style&gt;
+body {
+  font-family: arial, sans-serif;
+  background-color: #48d;
+  color: #fff; }
+#rooms { background-color: #8d4; padding: 5px; }
+#messages { background-color: #d48; padding: 5px; }
+&lt;/style&gt;
+
+&lt;body&gt;
+  &lt;h1&gt;Flatchat&lt;/h1&gt;
+  &lt;div id="rooms"&gt;Rooms&lt;/div&gt;
+  &lt;div id="messages"&gt;Messages&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</pre>
+
+<h3><%= step %></h3>
+<p>Responsive styling.</p>
+<p>Add (append) to <code>style</code> element.</p>
+<pre>
+@media (max-width: 767px) {
+  #rooms {
+    max-height: 100px;
+    overflow-y: scroll;
+  }
+}
+@media (min-width: 768px) {
+  #rooms {
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+  }
+  #messages {
+    display: inline-block;
+    vertical-align: top;
+    width: 75%;
+  }
+}
+</pre>
+
+<h3><%= step %></h3>
+<p>Now with fake data.</p>
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;title&gt;Flatchat&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;style&gt;
+body {
+  font-family: arial, sans-serif;
+  background-color: #fff;
+  color: #48d; }
+#rooms { background-color: #48d; color: #fff; padding: 5px; }
+.room { padding: 5px; }
+.room:hover { background-color: #26b; cursor: pointer; }
+#messages { background-color: #48d; color: #fff; padding: 5px; }
+.message { padding: 5px; }
+@media (max-width: 767px) {
+  .rooms_collapsed {
+    max-height: 100px;
+    overflow-y: scroll;
+  }
+}
+@media (min-width: 768px) {
+  #rooms {
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+  }
+  #messages {
+    display: inline-block;
+    vertical-align: top;
+    width: 75%;
+  }
+}
+&lt;/style&gt;
+
+&lt;body&gt;
+  &lt;h1&gt;Flatchat&lt;/h1&gt;
+  &lt;div id="rooms"&gt;
+    &lt;p&gt;Rooms&lt;/p&gt;
+    &lt;div class="rooms_collapsed"&gt;
+      &lt;div id="room_1" class="room"&gt;
+        &lt;div class="username"&gt;&lt;strong&gt;Callie A&lt;/strong&gt;&lt;/div&gt;
+        &lt;div class="time_ago"&gt;&lt;small&gt;5 minutes ago&lt;/small&gt;&lt;/div&gt;
+        &lt;div class="room_name"&gt;Working yet?&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div id="room_2" class="room"&gt;
+        &lt;div class="username"&gt;&lt;strong&gt;Alf S&lt;/strong&gt;&lt;/div&gt;
+        &lt;div class="time_ago"&gt;&lt;small&gt;10 minutes ago&lt;/small&gt;&lt;/div&gt;
+        &lt;div class="room_name"&gt;First room&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div id="messages"&gt;
+    &lt;p&gt;Messages&lt;/p&gt;
+    &lt;div id="message_1" class="message"&gt;
+      &lt;div class="username"&gt;&lt;strong&gt;Callie A&lt;/strong&gt;&lt;/div&gt;
+      &lt;div class="time_ago"&gt;&lt;small&gt;4 minutes ago&lt;/small&gt;&lt;/div&gt;
+      &lt;div class="message_body"&gt;Oh.&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id="message_2" class="message"&gt;
+      &lt;div class="username"&gt;&lt;strong&gt;Lilly M&lt;/strong&gt;&lt;/div&gt;
+      &lt;div class="time_ago"&gt;&lt;small&gt;5 minutes ago&lt;/small&gt;&lt;/div&gt;
+      &lt;div class="message_body"&gt;No. These are hard-coded fake messages. Sorry.&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id="message_1" class="message"&gt;
+      &lt;div class="username"&gt;&lt;strong&gt;Callie A&lt;/strong&gt;&lt;/div&gt;
+      &lt;div class="time_ago"&gt;&lt;small&gt;5 minutes ago&lt;/small&gt;&lt;/div&gt;
+      &lt;div class="message_body"&gt;Can I post messages now?&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</pre>
+
+<h3><%= step %></h3>
+<p>Move the content of the &lt;style&gt; element to a new file 'assets/stylesheets/application.css'</p>
+<p>Remove &lt;style&gt;&lt;/style&gt;.</p>
+<p>Use the css in 'index.html' by adding a link to the &lt;head&gt; tag.</p>
+<pre>
+  &lt;link rel="stylesheet" href="assets/stylesheets/application.css"&gt;
+</pre>

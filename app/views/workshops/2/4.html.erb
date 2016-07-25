@@ -1,0 +1,25 @@
+<%= back_link('2/3') %>
+<small>2-4</small>
+<%= forward_link('2/5', 'CSS libraries') %>
+
+<h1>Images</h1>
+
+<h3><%= step %></h3>
+<p>Save the <a href="client_logo.png">Flatchat logo</a> to 'flatchat/logo.png'</p>
+
+<h3><%= step %></h3>
+<p>Change <code>&lt;h1&gt;Flatchat&lt;/h1&gt;</code> to:</p>
+<pre>
+&lt;h1&gt;
+  &lt;img src="logo.png" height="24"&gt;&lt;/img&gt;
+  &lt;span&gt;Flatchat&lt;span&gt;
+&lt;/h1&gt;
+</pre>
+<p>Reload the page.</p>
+
+<h3><%= step %></h3>
+<p>Add to <code>&lt;head&gt;</code>:</p>
+<pre>
+&lt;link rel="shortcut icon" href="logo.png"&gt;
+</pre>
+<p>Reload the page. To get the browser to load the icon you will need to open file and reopen tab.</p>

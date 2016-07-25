@@ -1,6 +1,7 @@
 Rails.application.configure do
 
   config.workshop_key = "dadada"
+  ActionCable.server.config.disable_request_forgery_protection = true
 
 
   # Settings specified here will take precedence over those in config/application.rb.

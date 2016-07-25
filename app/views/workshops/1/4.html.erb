@@ -1,13 +1,13 @@
+<%= back_link('1/3') %>
+<small>1-4</small>
+<%= forward_link('1/5', 'Text editor') %>
+
 <h1>Network activity</h1>
 
-<h3>1</h3>
-<p><code>$.get("http://www.timeapi.org/utc/now?format=%25a%20%25b%20%25d%20%25I:%25M:%25S%20%25Z%20%25Y", function(data){$("#screen").html(data);});</code>.</p>
+<h3><%= step %></h3>
+<p>Go to Network Monitor in the Inspector.</p>
+<p>Reload the page and note the downloaded files.</p>
 
-<h3>2</h3>
-<p>Enter <code>document.getElementById("screen").style.backgroundColor = "red";</code>.</p>
-<p>Enter <code>document.getElementById("screen").innerHTML = "&lt;h1&gt;New content!!!&lt;/h1&gt;";</code>.</p>
-
-<h3>3</h3>
-<p>Enter <code>location.reload();</code>.</p>
-
-<%= link_to icon_text('Next: Network activity', 'fa-arrow-right'), workshop_path(page: '1/4'), class: 'btn btn-info pull-right' %>
+<h3><%= step %></h3>
+<p>Enter:</p><pre>$.get("index.html");</pre>
+<p>Enter:</p><pre>location = "http://abc.net.au";</pre>
