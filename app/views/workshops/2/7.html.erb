@@ -1,38 +1,121 @@
-<%= back_link('2/4') %>
-<small>2-5</small>
-<%= forward_link('2/6', '') %>
+<%= back_link('2/6') %>
+<small>2-7</small>
+<%= forward_link('3/1', 'Data types') %>
 
-<h1>Fonts and icons</h1>
-
-<h3><%= step %></h3>
-<p><a href="https://fonts.google.com/specimen/Chewy?query=chewy"
-      target="flatchat_workshop">Google Fonts - Chewy</a></p>
+<h1>CSS libraries</h1>
 
 <h3><%= step %></h3>
-<p>Add to <code>&lt;head&gt;</code></p>
-<pre>
-&lt;link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet"&gt;
-</pre>
-
-<h3><%= step %></h3>
-<p>Add bottom of 'application.css':</p>
-<pre>
-.message_body { font-family: 'Chewy', cursive; }
-</pre>
-
-<h3><%= step %></h3>
-<p><a href="http://fontawesome.io"
-      target="flatchat_workshop">Font Awesome</a></p>
+<p>We'll be using <a href="http://getbootstrap.com/"
+      target="flatchat_workshop">Bootstrap</a>.</p>
 
 <h3><%= step %></h3>
 <p>Add to <code>&lt;head&gt;</code></p>
 <pre>
-&lt;link rel="stylesheet" href="assets/font-awesome-4.6.3/css/font-awesome.min.css"&gt;
+&lt;link rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+  integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+  crossorigin="anonymous"&gt;
 </pre>
 
 <h3><%= step %></h3>
-<p>Replace <code>&lt;h3&gt;Rooms&lt;/h3&gt;</code> with:</p>
+<p>Clear existing 'application.css' and add replace it with:</p>
+<p>Try adding the styles line by line.</p>
 <pre>
-&lt;h3&gt;&lt;i class="fa fa-users"&gt;&lt;/i&gt; Rooms&lt;/h3&gt;
+body { color: #48d; padding: 5px; }
+#logo { font-size: 1.5em; color: #48d; }
+#logo img { vertical-align: middle; margin-top: -3px; }
+#rooms { margin-top: 10px; }
+.room { padding: 5px; }
+#messages { margin-top: 10px; }
+.message { padding: 5px; }
+.message_body { font-family: 'Chewy', cursive; font-size: 1.5em; }
+.username, .time_ago { display: inline-block; color: #999; }
+.username { font-weight: 700; }
+.time_ago { font-size: 0.8em; }
 </pre>
-<p>Add icon 'fa-comments-o' to <code>&lt;h3&gt;Messages&lt;/h3&gt;</code>.</p>
+
+<h3><%= step %></h3>
+<p>Add Bootstrap grid.</p>
+<pre>
+&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div id="rooms" class="col-sm-4 col-md-3"&gt;
+    &lt;/div&gt;
+    &lt;div id="messages" class="col-sm-8 col-md-9"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+
+<h3><%= step %></h3>
+<p>Your 'index.html' should now be:</p>
+
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;meta charset="utf-8"/&gt;
+
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;title&gt;Flatchat&lt;/title&gt;
+  &lt;link rel="shortcut icon" href="logo.png"&gt;
+  &lt;link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet"&gt;
+  &lt;link rel="stylesheet" href="assets/fonts/font-awesome-4.6.3/css/font-awesome.min.css"&gt;
+  &lt;link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+    crossorigin="anonymous"&gt;
+  &lt;script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+    integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+    crossorigin="anonymous"&gt;&lt;/script&gt;
+  &lt;link rel="stylesheet" href="assets/stylesheets/application.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+      &lt;div id="logo"&gt;
+        &lt;img src="logo.png" height="24"&gt;&lt;/img&gt;
+        &lt;span&gt;Flatchat&lt;span&gt;
+      &lt;/div&gt;
+      &lt;div id="rooms" class="col-sm-4 col-md-3"&gt;
+        &lt;p&gt;Rooms&lt;/p&gt;
+        &lt;div class="rooms_collapsed"&gt;
+          &lt;div class="room"&gt;
+            &lt;div class="username"&gt;Callie A&lt;/div&gt;
+            &lt;div class="time_ago"&gt;5 minutes ago&lt;/div&gt;
+            &lt;div class="room_name"&gt;&lt;i class="fa fa-comments-o"&gt;&lt;/i&gt; Working yet?&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="room"&gt;
+            &lt;div class="username"&gt;Alf S&lt;/div&gt;
+            &lt;div class="time_ago"&gt;10 minutes ago&lt;/div&gt;
+            &lt;div class="room_name"&gt;&lt;i class="fa fa-comments-o"&gt;&lt;/i&gt; First room&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div id="messages" class="col-sm-10 col-md-9"&gt;
+        &lt;p&gt;Messages - Working yet?&lt;/p&gt;
+        &lt;div class="message"&gt;
+          &lt;div class="username"&gt;Callie A&lt;/div&gt;
+          &lt;div class="time_ago"&gt;4 minutes ago&lt;/div&gt;
+          &lt;div class="message_body"&gt;&lt;i class="fa fa-comment-o"&gt;&lt;/i&gt; Oh.&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="message"&gt;
+          &lt;div class="username"&gt;Lilly M&lt;/div&gt;
+          &lt;div class="time_ago"&gt;5 minutes ago&lt;/div&gt;
+          &lt;div class="message_body"&gt;&lt;i class="fa fa-comment-o"&gt;&lt;/i&gt; No. These are hard-coded fake messages. Sorry.&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="message"&gt;
+          &lt;div class="username"&gt;Callie A&lt;/div&gt;
+          &lt;div class="time_ago"&gt;6 minutes ago&lt;/div&gt;
+          &lt;div class="message_body"&gt;&lt;i class="fa fa-comment-o"&gt;&lt;/i&gt; Can I post messages now?&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</pre>

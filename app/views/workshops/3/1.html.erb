@@ -1,0 +1,50 @@
+<%= back_link('2/7') %>
+<small>3-1</small>
+<%= forward_link('3/2', 'JS libraries') %>
+
+<h1>Data types</h1>
+
+<h3><%= step %></h3>
+<table>
+  <tr><th>Data type</th><th>typeof</th></tr>
+  <tr><td>Number</td><td>"number"</td></tr>
+  <tr><td>String</td><td>"string"</td></tr>
+  <tr><td>Boolean</td><td>"boolean"</td></tr>
+  <tr><td>Function</td><td>"function"</td></tr>
+  <tr><td>Object</td><td>"object"</td></tr>
+  <tr><td>Undefined</td><td>"undefined"</td></tr>
+  <tr><td>Null</td><td>"object"</td></tr>
+</table>
+
+<h3><%= step %></h3>
+<p>JSON</p>
+<pre>
+{ "id": 4,
+  "room_id": 2,
+  "user": "Callie A",
+  "body": "Can I post messages now?",
+  "created_at": "2016-07-24T17:27:55.961Z" }
+</pre>
+<p>Arrays</p>
+<pre>
+[ 6, 7, 10, 3, 1 ]
+[ "Callie A", "Alf S", "Lilly M" ]
+</pre>
+<p>Together</p>
+<pre>
+[ { "id": 5, "name": "Callie A" },
+  { "id": 5, "name": "Alf S" },
+  { "id": 5, "name": "Lilly M" } ]
+
+{ "id": 2,
+  "created_at": "2016-07-24T17:27:15.978Z",
+  "name": "Working yet?",
+  "user":  "Callie A",
+  "messages":
+    [ { "id": 6, "room_id": 2, "user": "Callie A", "created_at": "2016-07-24T17:29:05.462Z",
+          "body": "Oh" },
+      { "id": 5, "room_id": 2, "user": "Lilly M", "created_at": "2016-07-24T17:28:35.941Z",
+          "body": "No. These are hard-coded fake messages. Sorry." },
+      { "id": 4, "room_id": 2, "user": "Callie A", "created_at": "2016-07-24T17:27:55.978Z",
+          "body": "Can I post messages now?" } ] }
+</pre>

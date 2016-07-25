@@ -1,5 +1,11 @@
-<p>
+<p id="room_<%= room.id %>">
   User: <%= room.user.username %><br>
   Room name: <%= room.name %><br>
   Created: <%= room.created_at %>
+  <% if current_user.is_admin? %>
+    <br>
+    <%= link_to admin_room_path(room), method: :delete, remote: true do %>
+      <%= icon 'fa-times' %>
+    <% end %>
+  <% end %>
 </p>

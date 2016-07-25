@@ -1,29 +1,42 @@
-<%= back_link('4/4') %>
-<small>4-5</small>
-<%= forward_link('5/1', 'Build a JS application') %>
+<%= back_link('3/1') %>
+<small>3-2</small>
+<%= forward_link('3/3', 'Ajax') %>
 
-<h1>Data types</h1>
-
-<h3><%= step %></h3>
-<tr><td>Boolean</td><td>"boolean"</td></tr>
-<tr><td>Number</td><td>"number"</td></tr>
-<tr><td>String</td><td>"string"</td></tr>
-
-<tr><td>Function</td><td>"function"</td></tr>
-<tr><td>Object</td><td>"object"</td></tr>
-<tr><td>Undefined</td><td>"undefined"</td></tr>
-<tr><td>Null</td><td>"object"</td></tr>
-
+<h1>JS libraries</h1>
 
 <h3><%= step %></h3>
-<p>Javascript</p>
-<table>
-  <tr><th>Data type</th><th>typeof</th></tr>
-  <tr><td>Number</td><td>"number"</td></tr>
-  <tr><td>String</td><td>"string"</td></tr>
-  <tr><td>Boolean</td><td>"boolean"</td></tr>
-  <tr><td>Function</td><td>"function"</td></tr>
-  <tr><td>Object</td><td>"object"</td></tr>
-  <tr><td>Undefined</td><td>"undefined"</td></tr>
-  <tr><td>Null</td><td>"object"</td></tr>
-</table>
+<p><a href="https://jquery.com/"
+      target="flatchat_workshop">jQuery</a></p>
+
+<h3><%= step %></h3>
+<p>From earlier:</p><pre>$("#screen").css({"font-size": "2em", "color": "#fff", "background-color": "#48d", "padding": "50px"});</pre>
+
+<p>In plain javascript.</p>
+<pre>
+var elementStyle = document.getElementById("screen").style;
+elementStyle.fontSize = "2em";
+elementStyle.color = "#fff";
+elementStyle.backgroundColor = "#48d";
+elementStyle.padding = "50px";
+</pre>
+
+<h3><%= step %></h3>
+<p>Try this in the console (you can use this page; it's using jQuery!):</p>
+<pre>
+$('body').fadeOut(3000).fadeIn(3000);
+</pre>
+
+<h3><%= step %></h3>
+<p>Add jQuery to <code>&lt;head&gt;</code></p>
+<pre>
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"&gt;&lt;/script&gt;
+</pre>
+
+<h3><%= step %></h3>
+<p>Add Bootstrap javascipt to <code>&lt;head&gt;</code></p>
+<pre>
+&lt;script
+  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+  integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+  crossorigin="anonymous"&gt;&lt;/script&gt;
+</pre>

@@ -7,9 +7,12 @@ Rails.application.routes.draw do
 
   resource :workshop
   resource :server, only: [:show]
-  resources :rooms, only: [:index, :show, :create, :destroy]
+  resources :rooms, only: [:index, :show, :create]
   resources :messages, only: [:show, :create]
   resources :users, only: [:show]
+  namespace :admin, module: :admins do
+    resources :rooms, only: [:destroy]
+  end
 
   resource :simple_post, only: [:create]
 

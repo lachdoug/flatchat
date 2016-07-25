@@ -1,0 +1,26 @@
+<%= back_link('4/2') %>
+<small>4-3</small>
+<% #= forward_link('4/4', '') %>
+
+<h1>Get data</h1>
+
+<h3><%= step %></h3>
+<p>Create a file 'assets/javasripts/get_rooms.js'</p>
+<pre>
+$( document ).ready(function() {
+  loadRooms();
+});
+
+function loadRooms() {
+  $.getJSON(serverUrl + "/rooms.json", function(rooms) {
+    $.each(rooms, function(index, room){
+      $('#rooms').prepend(room);
+    });
+  });
+};
+</pre>
+
+<p>Link the file in <code>&lt;head&gt;</code></p>
+<pre>
+  &lt;script type="text/javascript" src="assets/javascripts/get_rooms.js"&gt;&lt;/script&gt;
+</pre>

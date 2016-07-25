@@ -1,0 +1,27 @@
+<%= back_link('4/2') %>
+<small>4-3</small>
+<%= forward_link('4/4', '') %>
+
+<h1>Get data</h1>
+
+<h3><%= step %></h3>
+<p></p>
+
+<h3><%= step %></h3>
+<p>Create a file 'assets/javasripts/load_rooms.js'</p>
+<pre>
+function loadRoomsList() {
+  $.getJSON(serverUrl + "/rooms.json", function(rooms) {
+    $.each(rooms, function(index, room){
+      $('#rooms_list').prepend(roomHtml(room));
+    });
+    bind_time_ago();
+    $("#loading").hide();
+    $("#rooms").fadeIn();
+  });
+};
+
+function roomHtml(room) {
+  return '&lt;p&gt;&lt;span class="room_header" data-createdat="' + room.created_at + '"&gt;&lt;strong class="room_header_user"&gt;' + room.user + '&lt;/strong&gt; &lt;time class="room_header_time_since timeago" datetime="' + room.created_at + '"&gt;&lt;/time&gt;&lt;/span&gt;&lt;br&gt;&lt;a class="room_link" data-roomid="' + room.id + '"&gt;' + room.name + '&lt;/a&gt;&lt;/p&gt;'
+};
+</pre>

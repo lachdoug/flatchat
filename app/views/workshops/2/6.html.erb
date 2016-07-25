@@ -1,21 +1,26 @@
 <%= back_link('2/5') %>
 <small>2-6</small>
-<%= forward_link('2/7', '') %>
+<%= forward_link('2/7', 'CSS libraries') %>
 
-<h1>Fonts</h1>
+<h1>Icons</h1>
 
 <h3><%= step %></h3>
-<p><a href="https://fonts.google.com/specimen/Chewy?query=chewy"
-      target="flatchat_workshop">Google Fonts - Chewy</a></p>
+<p><a href="http://fontawesome.io"
+      target="flatchat_workshop">Font Awesome</a></p>
+
+<h3><%= step %></h3>
+<p>Download the zip file. Extract 'css/font-awesome.min.css'. Put it in the 'assets/stylesheets/' directory</p>
+
 
 <h3><%= step %></h3>
 <p>Add to <code>&lt;head&gt;</code></p>
 <pre>
-&lt;link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet"&gt;
+&lt;link rel="stylesheet" href="assets/stylesheets/font-awesome.min.css"&gt;
 </pre>
 
 <h3><%= step %></h3>
-<p>Add bottom of 'application.css':</p>
+<p>Add to each <code>.message_body</code>:</p>
 <pre>
-.message_body { font-family: 'Chewy', cursive; }
+&lt;i class="fa fa-comment-o"&gt;&lt;/i&gt;
 </pre>
+<p>Add icon 'fa-comments-o' to each <code>.room_name</code>.</p>

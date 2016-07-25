@@ -1,22 +1,21 @@
 <%= back_link('2/4') %>
 <small>2-5</small>
-<%= forward_link('2/6', 'Fonts and icons') %>
+<%= forward_link('2/6', 'Icons') %>
 
-<h1>CSS libraries</h1>
+<h1>Fonts</h1>
 
 <h3><%= step %></h3>
-<p>We'll be using <a href="http://getbootstrap.com/"
-      target="flatchat_workshop">Bootstrap</a></p>
+<p><a href="https://fonts.google.com/specimen/Chewy?query=chewy"
+      target="flatchat_workshop">Google Fonts - Chewy</a></p>
 
 <h3><%= step %></h3>
 <p>Add to <code>&lt;head&gt;</code></p>
 <pre>
-&lt;link rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-  integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
-  crossorigin="anonymous"&gt;
-&lt;script
-  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
-  integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
-  crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet"&gt;
+</pre>
+
+<h3><%= step %></h3>
+<p>Add to 'application.css':</p>
+<pre>
+.message_body { font-family: 'Chewy', cursive; font-size: 1.5em; }
 </pre>

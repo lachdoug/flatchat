@@ -1,0 +1,60 @@
+<%= back_link('4/1') %>
+<small>4-2</small>
+<%= forward_link('4/3', 'Get data') %>
+
+<h1>Web resources</h1>
+
+<h3><%= step %></h3>
+<p>A web resource has a URI.</p>
+<p>A URL is a format request on a URI.</p>
+<ul>
+<li>html</li>
+<li>json</li>
+</ul>
+
+<h3><%= step %></h3>
+<p>Web resources can be collections.</p>
+<ul>
+<li>/rooms - all rooms</li>
+<li>/rooms/1 - room 1</li>
+</ul>
+
+<h3><%= step %></h3>
+<p>HTTP methods and web resources.</p>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>HTTP Verb</th>
+			<th>CRUD</th>
+			<th>Collection</th>
+			<th>Item</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>POST</td>
+			<td>Create</td>
+			<td>201 (Created)</td>
+			<td>404 (Not Found)</td>
+		</tr>
+		<tr>
+			<td>GET</td>
+			<td>Read</td>
+			<td>200 (OK), list</td>
+			<td>200 (OK), single record.</td>
+		</tr>
+		<tr>
+			<td>PATCH</td>
+			<td>Update/Modify</td>
+			<td>404 (Not Found)</td>
+			<td>200 (OK)</td>
+		</tr>
+		<tr>
+			<td>DELETE</td>
+			<td>Delete</td>
+			<td>404 (Not Found)</td>
+			<td>200 (OK)</td>
+		</tr>
+	</tbody>
+</table>

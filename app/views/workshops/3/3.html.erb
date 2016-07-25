@@ -1,0 +1,71 @@
+<%= back_link('3/2') %>
+<small>3-3</small>
+<%= forward_link('4/1', 'Web requests') %>
+
+<h1>Ajax</h1>
+
+<h3><%= step %></h3>
+<p><a href="https://api.jquery.com/category/ajax/"
+      target="flatchat_workshop">jQuery Ajax</a></p>
+
+<h3><%= step %></h3>
+<p>Create 'assets/javascripts/ajax_setup.js':</p>
+<pre>
+$(document).ready(function() {
+
+  $(document).ajaxError(function(event, request, settings, error) {
+    var responseText = request.responseText;
+    if (request.status === 401 || request.status === 500 || request.status === 404) {
+      alert(error + " - " + responseText);
+    }
+  });
+
+  $.ajaxSetup({
+    headers : { 'Authorization' : 'Token ' + apiKey }
+  });
+
+  setFormsServerUrl();
+
+  bindAjaxForm();
+
+});
+
+function setFormsServerUrl() {
+  alert(serverUrl);
+  document.new_room_form.action = ( serverUrl + "/rooms.json" );
+  document.new_message_form.action = ( serverUrl + "/messages.json" );
+}
+
+function bindAjaxForm() {
+  $('form').ajaxForm({
+    error: function(html, status, xhr, this_form) {
+      var errors = JSON.parse(html.responseText).errors;
+      this_form.append(errorsHtml(errors));
+    }
+  });
+};
+
+function errorsHtml(errors) {
+  return ' \
+  &lt;p&gt; \
+    &lt;div class="alert alert-warning alert-dismissible"&gt; \
+      &lt;button class="close" data-dismiss="alert"&gt; \
+        &lt;span&gt;&times;&lt;/span&gt; \
+      &lt;/button&gt;' +
+      errors.join('&lt;br&gt;') +
+    '&lt;/div&gt; \
+  &lt;/p&gt;'
+};
+</pre>
+
+<h3><%= step %></h3>
+<p><a href="https://github.com/malsup/form"
+      target="flatchat_workshop">jQuery Form</a></p>
+<p>Copy 'jquery.form.js' to 'assets/javascripts/ajax_form.js'</p>
+
+<h3><%= step %></h3>
+<p>Link the files in your <code>&lt;head&gt;</code></p>
+<pre>
+  &lt;script type="text/javascript" src="assets/javascripts/ajax_setup.js"&gt;&lt;/script&gt;
+  &lt;script type="text/javascript" src="assets/javascripts/ajax_form.js"&gt;&lt;/script&gt;
+</pre>

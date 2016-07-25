@@ -23,16 +23,14 @@
 &lt;/head&gt;
 
 &lt;style&gt;
-body {
-  font-family: arial, sans-serif;
-  background-color: #48d;
-  color: #fff; }
-#rooms { background-color: #8d4; padding: 5px; }
-#messages { background-color: #d48; padding: 5px; }
+body { font-family: arial, sans-serif; }
+#logo { font-size: 1.5em; color: #48d; }
+#rooms { background-color: #48d; color: #fff; padding: 5px; margin-top: 5px; }
+#messages { background-color: #48d; color: #fff; padding: 5px; margin-top: 5px; }
 &lt;/style&gt;
 
 &lt;body&gt;
-  &lt;h1&gt;Flatchat&lt;/h1&gt;
+  &lt;div id="logo"&gt;Flatchat&lt;/div&gt;
   &lt;div id="rooms"&gt;Rooms&lt;/div&gt;
   &lt;div id="messages"&gt;Messages&lt;/div&gt;
 &lt;/body&gt;
@@ -42,6 +40,7 @@ body {
 
 <h3><%= step %></h3>
 <p>Responsive styling.</p>
+<p>Adjust browser width.</p>
 <p>Add (append) to <code>style</code> element.</p>
 <pre>
 @media (max-width: 767px) {
@@ -63,9 +62,10 @@ body {
   }
 }
 </pre>
+<p>Reload and adjust your browser width again.</p>
 
 <h3><%= step %></h3>
-<p>Now with fake data.</p>
+<p>Now with fake data. Note the new styles.</p>
 <pre>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -75,15 +75,16 @@ body {
 &lt;/head&gt;
 
 &lt;style&gt;
-body {
-  font-family: arial, sans-serif;
-  background-color: #fff;
-  color: #48d; }
-#rooms { background-color: #48d; color: #fff; padding: 5px; }
+body { font-family: arial, sans-serif; }
+#logo { font-size: 1.5em; color: #48d; }
+#rooms { background-color: #48d; color: #fff; padding: 5px; margin-top: 5px; }
 .room { padding: 5px; }
 .room:hover { background-color: #26b; cursor: pointer; }
-#messages { background-color: #48d; color: #fff; padding: 5px; }
+#messages { background-color: #48d; color: #fff; padding: 5px; margin-top: 5px; }
 .message { padding: 5px; }
+.username, .time_ago { display: inline-block; color: #999; }
+.username { font-weight: 700; }
+.time_ago { font-size: 0.8em; }
 @media (max-width: 767px) {
   .rooms_collapsed {
     max-height: 100px;
@@ -105,37 +106,37 @@ body {
 &lt;/style&gt;
 
 &lt;body&gt;
-  &lt;h1&gt;Flatchat&lt;/h1&gt;
+  &lt;div id="logo"&gt;Flatchat&lt;/div&gt;
   &lt;div id="rooms"&gt;
     &lt;p&gt;Rooms&lt;/p&gt;
     &lt;div class="rooms_collapsed"&gt;
-      &lt;div id="room_1" class="room"&gt;
-        &lt;div class="username"&gt;&lt;strong&gt;Callie A&lt;/strong&gt;&lt;/div&gt;
-        &lt;div class="time_ago"&gt;&lt;small&gt;5 minutes ago&lt;/small&gt;&lt;/div&gt;
+      &lt;div class="room"&gt;
+        &lt;div class="username"&gt;Callie A&lt;/div&gt;
+        &lt;div class="time_ago"&gt;5 minutes ago&lt;/div&gt;
         &lt;div class="room_name"&gt;Working yet?&lt;/div&gt;
       &lt;/div&gt;
-      &lt;div id="room_2" class="room"&gt;
-        &lt;div class="username"&gt;&lt;strong&gt;Alf S&lt;/strong&gt;&lt;/div&gt;
-        &lt;div class="time_ago"&gt;&lt;small&gt;10 minutes ago&lt;/small&gt;&lt;/div&gt;
+      &lt;div class="room"&gt;
+        &lt;div class="username"&gt;Alf S&lt;/div&gt;
+        &lt;div class="time_ago"&gt;10 minutes ago&lt;/div&gt;
         &lt;div class="room_name"&gt;First room&lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;div id="messages"&gt;
-    &lt;p&gt;Messages&lt;/p&gt;
-    &lt;div id="message_1" class="message"&gt;
-      &lt;div class="username"&gt;&lt;strong&gt;Callie A&lt;/strong&gt;&lt;/div&gt;
-      &lt;div class="time_ago"&gt;&lt;small&gt;4 minutes ago&lt;/small&gt;&lt;/div&gt;
+    &lt;p&gt;Messages - Working yet?&lt;/p&gt;
+    &lt;div class="message"&gt;
+      &lt;div class="username"&gt;Callie A&lt;/div&gt;
+      &lt;div class="time_ago"&gt;4 minutes ago&lt;/div&gt;
       &lt;div class="message_body"&gt;Oh.&lt;/div&gt;
     &lt;/div&gt;
-    &lt;div id="message_2" class="message"&gt;
-      &lt;div class="username"&gt;&lt;strong&gt;Lilly M&lt;/strong&gt;&lt;/div&gt;
-      &lt;div class="time_ago"&gt;&lt;small&gt;5 minutes ago&lt;/small&gt;&lt;/div&gt;
+    &lt;div class="message"&gt;
+      &lt;div class="username"&gt;Lilly M&lt;/div&gt;
+      &lt;div class="time_ago"&gt;5 minutes ago&lt;/div&gt;
       &lt;div class="message_body"&gt;No. These are hard-coded fake messages. Sorry.&lt;/div&gt;
     &lt;/div&gt;
-    &lt;div id="message_1" class="message"&gt;
-      &lt;div class="username"&gt;&lt;strong&gt;Callie A&lt;/strong&gt;&lt;/div&gt;
-      &lt;div class="time_ago"&gt;&lt;small&gt;5 minutes ago&lt;/small&gt;&lt;/div&gt;
+    &lt;div class="message"&gt;
+      &lt;div class="username"&gt;Callie A&lt;/div&gt;
+      &lt;div class="time_ago"&gt;6 minutes ago&lt;/div&gt;
       &lt;div class="message_body"&gt;Can I post messages now?&lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -150,4 +151,10 @@ body {
 <p>Use the css in 'index.html' by adding a link to the &lt;head&gt; tag.</p>
 <pre>
   &lt;link rel="stylesheet" href="assets/stylesheets/application.css"&gt;
+</pre>
+
+<h3><%= step %></h3>
+<p>Comments</p>
+<pre>
+//  This is a comment.
 </pre>
