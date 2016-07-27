@@ -1,0 +1,64 @@
+<%= back_link('6/5') %>
+<small>7-1</small>
+<%= forward_link('8/1', 'Get data') %>
+
+<h1>Index file</h1>
+
+<h3><%= step %></h3>
+<p>Remove the dummy data. Your 'index.html' should be:</p>
+
+<pre>
+&lt;!DOCTYPE html&gt;
+
+&lt;html&gt;
+
+&lt;head&gt;
+&lt;meta charset="utf-8"/&gt;
+
+  <!-- Set page title and favicon -->
+  &lt;title&gt;Flatchat&lt;/title&gt;
+  &lt;link rel="shortcut icon" href="logo.png"&gt;
+
+  <!-- Load Chewy font -->
+  &lt;link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet"&gt;
+  <!-- Load Font Awesome -->
+  &lt;link rel="stylesheet" href="assets/fonts/font-awesome-4.6.3/css/font-awesome.min.css"&gt;
+  <!-- Load Bootstrap CSS -->
+  &lt;link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+    crossorigin="anonymous"&gt;
+
+  <!-- Load stylesheet -->
+  &lt;link rel="stylesheet" href="assets/stylesheets/application.css"&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+      &lt;div id="logo"&gt;
+        &lt;img src="logo.png" height="24"&gt;&lt;/img&gt;
+        &lt;span&gt;Flatchat&lt;span&gt;
+      &lt;/div&gt;
+      &lt;div id="rooms_panel" class="col-sm-4 col-md-3"&gt;
+        &lt;form id="new_room_form" name="new_room_form" method="post"&gt;
+          &lt;input name="room[name]" id="input_room_name" placeholder="New room" type="text" class="form-control" autocomplete="off"&gt;
+        &lt;/form&gt;
+        &lt;div class="rooms"&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div id="messages_panel" class="col-sm-10 col-md-9"&gt;
+        &lt;form id="new_message_form" name="new_message_form" method="post"&gt;
+          &lt;input name="message[room_id]" id="input_message_room_id" placeholder="New message" type="hidden"&gt;
+          &lt;input name="message[body]" id="input_message_body" placeholder="New message" type="text" class="form-control" autocomplete="off"&gt;
+        &lt;/form&gt;
+        &lt;div id="room_name"&gt;&lt;/div&gt;
+        &lt;div id="messages" class="messages"&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</pre>

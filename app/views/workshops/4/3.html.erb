@@ -1,26 +1,21 @@
 <%= back_link('4/2') %>
 <small>4-3</small>
-<% #= forward_link('4/4', '') %>
+<%= forward_link('4/4', 'Bootstrap JS') %>
 
-<h1>Get data</h1>
+<h1>Grid</h1>
 
 <h3><%= step %></h3>
-<p>Create a file 'assets/javasripts/get_rooms.js'</p>
+<p>Add Bootstrap grid.</p>
 <pre>
-$( document ).ready(function() {
-  loadRooms();
-});
-
-function loadRooms() {
-  $.getJSON(serverUrl + "/rooms.json", function(rooms) {
-    $.each(rooms, function(index, room){
-      $('#rooms').prepend(room);
-    });
-  });
-};
-</pre>
-
-<p>Link the file in <code>&lt;head&gt;</code></p>
-<pre>
-  &lt;script type="text/javascript" src="assets/javascripts/get_rooms.js"&gt;&lt;/script&gt;
+&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    logo html...
+    &lt;div id="rooms_panel" class="col-sm-4 col-md-3"&gt;
+      rooms html...
+    &lt;/div&gt;
+    &lt;div id="messages_panel" class="col-sm-8 col-md-9"&gt;
+      messages html...
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 </pre>

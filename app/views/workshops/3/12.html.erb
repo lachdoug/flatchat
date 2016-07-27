@@ -1,0 +1,25 @@
+<%= back_link('3/11') %>
+<small>3-12</small>
+<%= forward_link('4/1', 'Get Bootstrap') %>
+
+<h1>DOM</h1>
+
+<h3><%= step %></h3>
+<p>Access the document through <code>document</code>.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document"
+      target="flatchat_workshop">Docs</a>.</p>
+
+<h3><%= step %></h3>
+<pre>
+document.title;
+document.URL;
+document.doctype;
+document.body;
+</pre>
+
+<h3><%= step %></h3>
+<p>Manipulate elements</p>
+<pre>
+var messages = document.getElementsByClassName('message');
+messages[1].getElementsByClassName('message_body')[0].innerHTML = "&lt;i class=\"fa fa-trash-o\"&gt;&lt;/i&gt; Deleted.";
+</pre>

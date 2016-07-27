@@ -1,0 +1,51 @@
+<%= back_link('8/1') %>
+<small>8-2</small>
+<%= forward_link('8/3', 'Insert data') %>
+
+<h1>HTML templates</h1>
+
+<h3><%= step %></h3>
+<p>We will need HTML templates to present data.</p>
+
+<h3><%= step %></h3>
+<p>Create 'assets/javasripts/html_templates.js'</p>
+<pre>
+function errorsHtml(errors) {
+  return ' \
+  &lt;p&gt; \
+    &lt;div class="alert alert-warning alert-dismissible"&gt; \
+      &lt;button class="close" data-dismiss="alert"&gt; \
+        &lt;span&gt;×&lt;/span&gt; \
+      &lt;/button&gt;' +
+      errors.join('&lt;br&gt;') +
+    '&lt;/div&gt; \
+  &lt;/p&gt;'
+};
+
+function roomHtml(room) {
+  return ' \
+  &lt;div id="room_' + room.id + '" class="room"&gt; \
+    &lt;div class="username"&gt;' + room.user + '&lt;/div&gt; \
+    &lt;div class="time_ago"&gt;' + room.created_at + '&lt;/div&gt; \
+    &lt;a class="room_link" data-room-id="' + room.id + '"&gt; \
+      &lt;div class="room_name"&gt;&lt;i class="fa fa-comments-o"&gt;&lt;/i&gt; ' + room.name + '&lt;/div&gt; \
+    &lt;/a&gt; \
+  &lt;/div&gt;'
+};
+
+function messageHtml(room) {
+  return ' \
+  &lt;div id="message_' + message.id + '" class="message"&gt; \
+    &lt;div class="username"&gt;' + message.name + '&lt;/div&gt; \
+    &lt;div class="time_ago"&gt;' + message.created_at + '&lt;/div&gt; \
+    &lt;div class="message_body"&gt; \
+      &lt;i class="fa fa-comment-o"&gt;&lt;/i&gt; ' + message.body + ' \
+    &lt;/div&gt; \
+  &lt;/div&gt;'
+};
+</pre>
+
+<p>Link the file in your <code>&lt;head&gt;</code></p>
+<pre>
+  &lt;script type="text/javascript" src="assets/javascripts/html_templates.js"&gt;&lt;/script&gt;
+</pre>

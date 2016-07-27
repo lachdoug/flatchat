@@ -1,71 +1,38 @@
 <%= back_link('3/2') %>
 <small>3-3</small>
-<%= forward_link('4/1', 'Web requests') %>
+<%= forward_link('3/4', 'Data types') %>
 
-<h1>Ajax</h1>
-
-<h3><%= step %></h3>
-<p><a href="https://api.jquery.com/category/ajax/"
-      target="flatchat_workshop">jQuery Ajax</a></p>
+<h1>Logic</h1>
 
 <h3><%= step %></h3>
-<p>Create 'assets/javascripts/ajax_setup.js':</p>
+<p>Logical operators</p>
+<ul>
+  <li><code>x == y</code> x is equal to y?</li>
+  <li><code>x > y</code> x is greater than y?</li>
+  <li><code>x >= y</code> x is greater than or equal to y?</li>
+</ul>
 <pre>
-$(document).ready(function() {
-
-  $(document).ajaxError(function(event, request, settings, error) {
-    var responseText = request.responseText;
-    if (request.status === 401 || request.status === 500 || request.status === 404) {
-      alert(error + " - " + responseText);
-    }
-  });
-
-  $.ajaxSetup({
-    headers : { 'Authorization' : 'Token ' + apiKey }
-  });
-
-  setFormsServerUrl();
-
-  bindAjaxForm();
-
-});
-
-function setFormsServerUrl() {
-  alert(serverUrl);
-  document.new_room_form.action = ( serverUrl + "/rooms.json" );
-  document.new_message_form.action = ( serverUrl + "/messages.json" );
-}
-
-function bindAjaxForm() {
-  $('form').ajaxForm({
-    error: function(html, status, xhr, this_form) {
-      var errors = JSON.parse(html.responseText).errors;
-      this_form.append(errorsHtml(errors));
-    }
-  });
-};
-
-function errorsHtml(errors) {
-  return ' \
-  &lt;p&gt; \
-    &lt;div class="alert alert-warning alert-dismissible"&gt; \
-      &lt;button class="close" data-dismiss="alert"&gt; \
-        &lt;span&gt;&times;&lt;/span&gt; \
-      &lt;/button&gt;' +
-      errors.join('&lt;br&gt;') +
-    '&lt;/div&gt; \
-  &lt;/p&gt;'
-};
+1 == 1;
+1 == 2;
+1 > 2;
+1 < 2;
+2 <= 2;
 </pre>
 
 <h3><%= step %></h3>
-<p><a href="https://github.com/malsup/form"
-      target="flatchat_workshop">jQuery Form</a></p>
-<p>Copy 'jquery.form.js' to 'assets/javascripts/ajax_form.js'</p>
+<p>Comparison operators</p>
+<pre>
+true && false;
+true || false;
+1 == 2 || 2==2;
+</pre>
 
 <h3><%= step %></h3>
-<p>Link the files in your <code>&lt;head&gt;</code></p>
+<p>If statement</p>
 <pre>
-  &lt;script type="text/javascript" src="assets/javascripts/ajax_setup.js"&gt;&lt;/script&gt;
-  &lt;script type="text/javascript" src="assets/javascripts/ajax_form.js"&gt;&lt;/script&gt;
+if ( true ) { "green" };
+if ( false ) { "green" };
+if ( false ) { "green" } else { "red" };
+if ( 100 > 99 ) { "green" } else { "red" };
+if ( 100 < 99 ) { "green" } else { "red" };
 </pre>

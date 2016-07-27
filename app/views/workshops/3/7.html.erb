@@ -1,0 +1,34 @@
+<%= back_link('3/6') %>
+<small>3-7</small>
+<%= forward_link('3/8', 'Objects') %>
+
+<h1>Functions</h1>
+
+<h3><%= step %></h3>
+<p>Function: block of code that performs a particular task.</p>
+<p><code>
+function convertToF(degrees_c) { return degrees_c * 9/5 + 32; };
+</code></pre>
+
+<h3><%= step %></h3>
+<pre>
+function double(number) { return number * 2; };
+double(2);
+double(double(2));
+</pre>
+
+<h3><%= step %></h3>
+<pre>
+function squareMetresToHa(area_square_m) { return area_square_m/10000; };
+function area(width_m, length_m) { var area_m2 = width_m * length_m; return squareMetresToHa(area_m2) + ' ha'; };
+area(200, 400);
+</pre>
+
+<h3><%= step %></h3>
+<p>Assign functions to variables.</p>
+<pre>
+var won = function() { alert("You won!")};
+var lost = function() { alert("You lost!")};
+var score =  Math.random();
+if (score > 0.5) won(); else lost();
+</pre>

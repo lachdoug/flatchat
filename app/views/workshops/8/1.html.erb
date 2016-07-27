@@ -1,0 +1,24 @@
+<%= back_link('7/1') %>
+<small>8-1</small>
+<%= forward_link('8/2', 'HTML templates') %>
+
+<h1>Get data</h1>
+
+<h3><%= step %></h3>
+<p>Create a file 'assets/javasripts/get_rooms.js'</p>
+<pre>
+$( document ).ready(function() {
+  $.get(serverUrl + "/rooms.json", function(rooms) {
+    $.each(rooms, function(index, room){
+      $('#rooms').append(room.id + ' - ' + room.name);
+    });
+  });
+});
+</pre>
+
+<h3><%= step %></h3>
+<p>Link the file in <code>&lt;head&gt;</code></p>
+<pre>
+  &lt;script type="text/javascript" src="assets/javascripts/get_rooms.js"&gt;&lt;/script&gt;
+</pre>
+<p>Reload.</p>

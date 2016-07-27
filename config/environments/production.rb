@@ -3,6 +3,9 @@ Rails.application.configure do
   config.action_cable.url = ENV['ACTION_CABLE_URL']
   config.action_cable.allowed_request_origins = [ENV['ACTION_CABLE_ALLOWED_REQUEST_ORIGINS']]
   config.workshop_key = ENV['WORKSHOP_KEY']
+  config.app_host = ENV['APPLICATION_HOST'] || 'flatchat.workshops.engines.org'
+  config.app_http_protocol = ENV['APPLICATION_HTTP_PROTOCOL'] || 'http' # 'http' or 'https'
+  config.app_ws_protocol = ENV['APPLICATION_HTTP_PROTOCOL'] || 'ws' # 'ws' or 'wss'
 
 
   # Settings specified here will take precedence over those in config/application.rb.

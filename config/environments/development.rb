@@ -1,7 +1,9 @@
 Rails.application.configure do
 
   config.workshop_key = "dadada"
-  
+  config.app_host = "localhost:3001"
+  config.app_http_protocol = 'http'
+  config.app_ws_protocol = 'ws'
 
 
   # Settings specified here will take precedence over those in config/application.rb.

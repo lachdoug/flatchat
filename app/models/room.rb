@@ -5,12 +5,19 @@ class Room < ApplicationRecord
 
   validates :name, uniqueness: true, length: { minimum: 4, maximum: 24 }
 
-  def as_json(opts=nil)
-    { id: id,
-      user: user.username,
-      name: name,
-      created_at: created_at,
-      messages: messages.as_json }
+  def as_json(opts={})
+    if opts[:include] == :messages
+      { id: id,
+        user: user.username,
+        name: name,
+        created_at: created_at,
+        messages: messages.as_json }
+    else
+      { id: id,
+        user: user.username,
+        name: name,
+        created_at: created_at }
+    end
   end
 
 end

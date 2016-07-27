@@ -1,0 +1,21 @@
+<%= back_link('3/7') %>
+<small>3-8</small>
+<%= forward_link('3/9', 'JSON') %>
+
+<h1>Objects</h1>
+
+<h3><%= step %></h3>
+<p>Object: combination of variables, functions, and other data.</p>
+<pre>
+myDog = { 'name': 'Spot', 'breed': 'jack russell', 'color': 'white/brown', weight: 5.2 };
+myDog.color;
+myDog.describe = function() { return this.name + ' is a ' + this.weight + 'kg ' + this.color + ' ' + this.breed + '.'; };
+myDog.describe();
+</pre>
+
+<h3><%= step %></h3>
+<p>Arrays of objects.</p>
+<pre>
+[ { "id": 2, "name": "Callie A" }, { "id": 3, "name": "Alf S" }, { "id": 4, "name": "Lilly M" } ][1];
+[ { "id": 2, "name": "Callie A" }, { "id": 3, "name": "Alf S" }, { "id": 4, "name": "Lilly M" } ][1].name;
+</pre>

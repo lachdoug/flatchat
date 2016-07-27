@@ -1,24 +1,28 @@
-<%= back_link('2/7') %>
-<small>3-1</small>
-<%= forward_link('3/2', '') %>
+<%= back_link('4/4') %>
+<small>5-1</small>
+<%= forward_link('5/2', 'Test it') %>
 
-<h1>HTML documents</h1>
-
-<h3><%= step %></h3>
-<p><code>&lt;!DOCTYPE html&gt;</code></p>
+<h1>Get jQuery</h1>
 
 <h3><%= step %></h3>
-<p>HTML element:</p>
+<p>jQuery: a js library that simplifies code that's used with HTML pages.</p>
+<p><a href="https://jquery.com/"
+      target="flatchat_workshop">jQuery</a></p>
+
+<h3><%= step %></h3>
+<p>From earlier:</p><pre>$("#screen").css({"font-size": "2em", "color": "#fff", "background-color": "#48d", "padding": "50px"});</pre>
+
+<p>In plain javascript it would be:</p>
 <pre>
-&lt;tag attribute="value"&gt;
-  some content...
-&lt;/tag&gt;
+var elementStyle = document.getElementById("screen").style;
+elementStyle.fontSize = "2em";
+elementStyle.color = "#fff";
+elementStyle.backgroundColor = "#48d";
+elementStyle.padding = "50px";
 </pre>
 
-
-
-serverUrl = 'http://localhost:3001';
-serverWebSocketUrl = 'ws://localhost:3001/cable';
-apiKey = 'VpC1mK735SWhcATeT99O0gtt';
-
-http://timeago.yarp.com/
+<h3><%= step %></h3>
+<p>Add jQuery to <code>&lt;head&gt;</code></p>
+<pre>
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"&gt;&lt;/script&gt;
+</pre>

@@ -14,6 +14,7 @@
   </head>
 
   <body>
+    <%= console if Rails.env.development? && current_user && current_user.is_admin? %>
     <%= page_body(yield) %>
   </body>
 

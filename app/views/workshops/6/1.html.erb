@@ -1,0 +1,46 @@
+<%= back_link('5/2') %>
+<small>6-1</small>
+<%= forward_link('6/2', 'Web resources') %>
+
+<h1>Web requests</h1>
+
+<h3><%= step %></h3>
+<p><%= image_tag 'request_response.png', width: 400 %></p>
+
+<h3><%= step %></h3>
+<p>http://www.example.com:80/path/to/myfile.html?key1=value1&key2=value2#SomewhereInTheDocument</p>
+<ul>
+  <li>Scheme/protocol: http</li>
+  <li>Domain name: www.example.com</li>
+  <li>Port: 80</li>
+  <li>Path to file: /path/to/myfile.html</li>
+  <li>Parameters: key1=value1&key2=value2</li>
+  <li>Anchor: SomewhereInTheDocument</li>
+</ul>
+
+<h3><%= step %></h3>
+<p>Requests have methods. Most common HTTP methods:</p>
+<ul>
+  <li>GET - read</li>
+  <li>POST - write</li>
+</ul>
+
+<h3><%= step %></h3>
+<p>Requests and responses have headers. These can be viewed in the inspector.</p>
+<p>Response headers contain a response status code. Common codes:</p>
+<ul>
+  <li>200 OK</li>
+  <li>201 Created</li>
+  <li>400 Bad request</li>
+  <li>401 Unauthorized</li>
+  <li>404 Not found</li>
+  <li>500 Intenal server error</li>
+</ul>
+
+<h3><%= step %></h3>
+<p>Connection technologies:</p>
+<ul>
+  <li>Ajax - request-response without rendering</li>
+  <li>Sever sent events - continuous data streams</li>
+  <li>Web sockets - full-duplex communication</li>
+</ul>

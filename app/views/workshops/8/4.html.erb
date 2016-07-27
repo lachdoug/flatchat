@@ -1,0 +1,32 @@
+<%= back_link('8/3') %>
+<small>8-4</small>
+<%= forward_link('8/5', '') %>
+
+<h1>Room links</h1>
+
+<h3><%= step %></h3>
+<p>The room links do not have <code>href</code> tags, so at the moment they don't go anywhere.</p>
+<p>We will handle the links with javascript. When a link is clicked, the room messages will be loaded.</p>
+
+<h3><%= step %></h3>
+<p>Create 'assets/javasripts/get_room_messages.js'</p>
+
+<pre>
+var bindLoadRoomOnListClick = function() {
+  $("#rooms").on("click", "a.room_link", function(event){
+    var roomId = $(this).data("room-id");
+    $.get((serverUrl + "/rooms/" + roomId + ".json"), function(room) {
+      alert(room.name);
+    });
+  });
+};
+
+$( document ).ready(function() {
+  bindLoadRoomOnListClick();
+});
+</pre>
+
+<p>Link the file in your <code>&lt;head&gt;</code></p>
+<pre>
+  &lt;script type="text/javascript" src="assets/javascripts/get_room_messages.js"&gt;&lt;/script&gt;
+</pre>

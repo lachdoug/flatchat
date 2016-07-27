@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :rooms, only: [:destroy]
   end
 
-  resource :simple_post, only: [:create]
+  resource :fake_post, only: [:create]
 
 
 end

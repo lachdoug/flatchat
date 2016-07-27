@@ -1,0 +1,27 @@
+<%= back_link('3/8') %>
+<small>3-9</small>
+<%= forward_link('3/10', 'Data structures') %>
+
+<h1>JSON</h1>
+
+<h3><%= step %></h3>
+<p>JSON - object data formatted as a string. Used as a lightweight data-interchange format.</p>
+<pre>
+'{ "id": 4,
+   "room_id": 2,
+   "user": "Callie A",
+   "body": "Can I post messages now?",
+   "created_at": "2016-07-24T17:27:55.961Z" }'
+</pre>
+<p>You'll normally see it as:</p>
+<pre>
+"{\"id\":4,\"room_id\":2,\"user\":\"Callie A\",\"body\":\"Can I post messages now?\",\"created_at\":\"2016-07-24T17:27:55.961Z\" }"
+</pre>
+<p>To extract data, parse JSON to create an object.</p>
+<pre>
+myJson = '{ "foo": "bar" }';
+typeof(myJson);
+myObject = JSON.parse( myJson );
+typeof(myObject);
+myObject.foo;
+</pre>

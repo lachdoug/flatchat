@@ -1,0 +1,22 @@
+<%= back_link('6/3') %>
+<small>6-4</small>
+<%= forward_link('6/5', 'Ajax setup') %>
+
+<h1>Ajax forms</h1>
+
+<h3><%= step %></h3>
+<p>Ajax: make a request without rendering the response.</p>
+<p><a href="https://api.jquery.com/category/ajax/"
+      target="flatchat_workshop">jQuery Ajax</a></p>
+
+<h3><%= step %></h3>
+<p>We want jQuery to handle our forms so that we can submit with Ajax.</p>
+<p><a href="https://github.com/malsup/form"
+      target="flatchat_workshop">jQuery Form</a></p>
+<p>Copy 'jquery.form.js' to 'assets/javascripts/libraries/ajax_form.js'</p>
+
+<h3><%= step %></h3>
+<p>Link the files in your <code>&lt;head&gt;</code></p>
+<pre>
+  &lt;script type="text/javascript" src="assets/javascripts/libraries/ajax_form.js"&gt;&lt;/script&gt;
+</pre>

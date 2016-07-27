@@ -1,0 +1,21 @@
+<%= back_link('8/2') %>
+<small>8-3</small>
+<%= forward_link('8/4', 'Room links') %>
+
+<h1>Insert data</h1>
+
+<h3><%= step %></h3>
+<p>Change 'assets/javasripts/get_rooms.js'</p>
+<pre>
+$( document ).ready(function() {
+  loadRooms();
+});
+
+function loadRooms() {
+  $.get(serverUrl + "/rooms.json", function(rooms) {
+    $.each(rooms, function(index, room){
+      $('#rooms').append(roomHtml(room));
+    });
+  });
+};
+</pre>

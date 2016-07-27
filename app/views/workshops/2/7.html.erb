@@ -1,121 +1,36 @@
 <%= back_link('2/6') %>
 <small>2-7</small>
-<%= forward_link('3/1', 'Data types') %>
+<%= forward_link('3/1', 'Variables') %>
 
-<h1>CSS libraries</h1>
-
-<h3><%= step %></h3>
-<p>We'll be using <a href="http://getbootstrap.com/"
-      target="flatchat_workshop">Bootstrap</a>.</p>
+<h1>Forms</h1>
 
 <h3><%= step %></h3>
-<p>Add to <code>&lt;head&gt;</code></p>
+<% form_url = Rails.application.config.app_http_protocol + '://' +
+              Rails.application.config.app_host + '/fake_post.json' %>
+<p>Add this form code under <code>#logo</code>
 <pre>
-&lt;link rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-  integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
-  crossorigin="anonymous"&gt;
+&lt;form action="<%= form_url %>" method="post"&gt;
+  &lt;input name="name" type="text" placeholder="What is your name?"&gt;
+  &lt;input name="answer[spelling]" type="text" placeholder="How do you spell dog?"&gt;
+  &lt;input name="answer[maths]" type="text" placeholder="What is 1+2?"&gt;
+  &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
 </pre>
+<p>Test the form. You should see parameters. Press your back button.</p>
+<p>Delete the form HTML.</p>
 
 <h3><%= step %></h3>
-<p>Clear existing 'application.css' and add replace it with:</p>
-<p>Try adding the styles line by line.</p>
+<p>Add this form code to the top of <code>#rooms_panel</code>
 <pre>
-body { color: #48d; padding: 5px; }
-#logo { font-size: 1.5em; color: #48d; }
-#logo img { vertical-align: middle; margin-top: -3px; }
-#rooms { margin-top: 10px; }
-.room { padding: 5px; }
-#messages { margin-top: 10px; }
-.message { padding: 5px; }
-.message_body { font-family: 'Chewy', cursive; font-size: 1.5em; }
-.username, .time_ago { display: inline-block; color: #999; }
-.username { font-weight: 700; }
-.time_ago { font-size: 0.8em; }
+&lt;form id="new_room_form" name="new_room_form" method="post"&gt;
+  &lt;input name="room[name]" id="input_room_name" placeholder="New room" type="text" autocomplete="off"&gt;
+&lt;/form&gt;
 </pre>
-
-<h3><%= step %></h3>
-<p>Add Bootstrap grid.</p>
+<p>Add this form code to the top of <code>#messages_panel</code>
 <pre>
-&lt;div class="container"&gt;
-  &lt;div class="row"&gt;
-    &lt;div id="rooms" class="col-sm-4 col-md-3"&gt;
-    &lt;/div&gt;
-    &lt;div id="messages" class="col-sm-8 col-md-9"&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+&lt;form id="new_message_form" name="new_message_form" method="post"&gt;
+  &lt;input name="message[room_id]" id="input_message_room_id" placeholder="New message" type="hidden"&gt;
+  &lt;input name="message[body]" id="input_message_body" placeholder="New message" type="text" autocomplete="off"&gt;
+&lt;/form&gt;
 </pre>
-
-
-<h3><%= step %></h3>
-<p>Your 'index.html' should now be:</p>
-
-<pre>
-&lt;!DOCTYPE html&gt;
-&lt;meta charset="utf-8"/&gt;
-
-&lt;html&gt;
-
-&lt;head&gt;
-  &lt;title&gt;Flatchat&lt;/title&gt;
-  &lt;link rel="shortcut icon" href="logo.png"&gt;
-  &lt;link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet"&gt;
-  &lt;link rel="stylesheet" href="assets/fonts/font-awesome-4.6.3/css/font-awesome.min.css"&gt;
-  &lt;link rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-    integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
-    crossorigin="anonymous"&gt;
-  &lt;script
-    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
-    integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
-    crossorigin="anonymous"&gt;&lt;/script&gt;
-  &lt;link rel="stylesheet" href="assets/stylesheets/application.css"&gt;
-&lt;/head&gt;
-
-&lt;body&gt;
-  &lt;div class="container"&gt;
-    &lt;div class="row"&gt;
-      &lt;div id="logo"&gt;
-        &lt;img src="logo.png" height="24"&gt;&lt;/img&gt;
-        &lt;span&gt;Flatchat&lt;span&gt;
-      &lt;/div&gt;
-      &lt;div id="rooms" class="col-sm-4 col-md-3"&gt;
-        &lt;p&gt;Rooms&lt;/p&gt;
-        &lt;div class="rooms_collapsed"&gt;
-          &lt;div class="room"&gt;
-            &lt;div class="username"&gt;Callie A&lt;/div&gt;
-            &lt;div class="time_ago"&gt;5 minutes ago&lt;/div&gt;
-            &lt;div class="room_name"&gt;&lt;i class="fa fa-comments-o"&gt;&lt;/i&gt; Working yet?&lt;/div&gt;
-          &lt;/div&gt;
-          &lt;div class="room"&gt;
-            &lt;div class="username"&gt;Alf S&lt;/div&gt;
-            &lt;div class="time_ago"&gt;10 minutes ago&lt;/div&gt;
-            &lt;div class="room_name"&gt;&lt;i class="fa fa-comments-o"&gt;&lt;/i&gt; First room&lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div id="messages" class="col-sm-10 col-md-9"&gt;
-        &lt;p&gt;Messages - Working yet?&lt;/p&gt;
-        &lt;div class="message"&gt;
-          &lt;div class="username"&gt;Callie A&lt;/div&gt;
-          &lt;div class="time_ago"&gt;4 minutes ago&lt;/div&gt;
-          &lt;div class="message_body"&gt;&lt;i class="fa fa-comment-o"&gt;&lt;/i&gt; Oh.&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class="message"&gt;
-          &lt;div class="username"&gt;Lilly M&lt;/div&gt;
-          &lt;div class="time_ago"&gt;5 minutes ago&lt;/div&gt;
-          &lt;div class="message_body"&gt;&lt;i class="fa fa-comment-o"&gt;&lt;/i&gt; No. These are hard-coded fake messages. Sorry.&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class="message"&gt;
-          &lt;div class="username"&gt;Callie A&lt;/div&gt;
-          &lt;div class="time_ago"&gt;6 minutes ago&lt;/div&gt;
-          &lt;div class="message_body"&gt;&lt;i class="fa fa-comment-o"&gt;&lt;/i&gt; Can I post messages now?&lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;
-</pre>
+<p>These forms won't work just yet...</p>

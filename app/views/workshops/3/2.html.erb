@@ -1,42 +1,22 @@
 <%= back_link('3/1') %>
 <small>3-2</small>
-<%= forward_link('3/3', 'Ajax') %>
+<%= forward_link('3/3', 'Logic') %>
 
-<h1>JS libraries</h1>
-
-<h3><%= step %></h3>
-<p><a href="https://jquery.com/"
-      target="flatchat_workshop">jQuery</a></p>
+<h1>Grammar</h1>
 
 <h3><%= step %></h3>
-<p>From earlier:</p><pre>$("#screen").css({"font-size": "2em", "color": "#fff", "background-color": "#48d", "padding": "50px"});</pre>
-
-<p>In plain javascript.</p>
+<p>Semicolons</p>
 <pre>
-var elementStyle = document.getElementById("screen").style;
-elementStyle.fontSize = "2em";
-elementStyle.color = "#fff";
-elementStyle.backgroundColor = "#48d";
-elementStyle.padding = "50px";
+var x = 2;
+x + x;
+var x = 2
+x + x
+var x = 2; x + x;
+var x = 2 x + x
 </pre>
 
 <h3><%= step %></h3>
-<p>Try this in the console (you can use this page; it's using jQuery!):</p>
+<p>Comments</p>
 <pre>
-$('body').fadeOut(3000).fadeIn(3000);
-</pre>
-
-<h3><%= step %></h3>
-<p>Add jQuery to <code>&lt;head&gt;</code></p>
-<pre>
-&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"&gt;&lt;/script&gt;
-</pre>
-
-<h3><%= step %></h3>
-<p>Add Bootstrap javascipt to <code>&lt;head&gt;</code></p>
-<pre>
-&lt;script
-  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
-  integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
-  crossorigin="anonymous"&gt;&lt;/script&gt;
+//  This is a comment.
 </pre>

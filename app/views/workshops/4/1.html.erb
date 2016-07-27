@@ -1,46 +1,21 @@
-<%= back_link('3/3') %>
+<%= back_link('3/12') %>
 <small>4-1</small>
-<%= forward_link('4/2', 'Web resources') %>
+<%= forward_link('4/2', 'Our CSS') %>
 
-<h1>Web requests</h1>
-
-<h3><%= step %></h3>
-<p><%= image_tag 'request_response.png', width: 400 %></p>
+<h1>Get Bootstrap</h1>
 
 <h3><%= step %></h3>
-<p>Requests have methods. Most common HTTP methods:</p>
-<ul>
-  <li>GET - read data</li>
-  <li>POST - send data</li>
-</ul>
+<p>We'll be using <a href="http://getbootstrap.com/"
+      target="flatchat_workshop">Bootstrap</a>.</p>
 
 <h3><%= step %></h3>
-<p>Requests and responses have headers. Responses headers contain a response status code:</p>
-<ul>
-  <li>200 OK</li>
-  <li>201 Created</li>
-  <li>400 Bad request</li>
-  <li>401 Unauthorized</li>
-  <li>404 Not found</li>
-  <li>500 Intenal server error</li>
-</ul>
-
-<h3><%= step %></h3>
-<p>Connection technologies:</p>
-<ul>
-  <li>Ajax - request-response without rendering</li>
-  <li>Sever sent events - continuous data streams</li>
-  <li>Web sockets - full-duplex communication</li>
-</ul>
-
-<h3><%= step %></h3>
-<p>Create a file 'assets/javascripts/server_config.js':</p>
+<p>Add to <code>&lt;head&gt;</code></p>
 <pre>
-serverUrl = 'http://flatchat.workshops.engines.org';
-serverWebSocketUrl = 'ws://flatchat.workshops.engines.org/cable';
-apiKey = 'YOUR_API_KEY';
+&lt;link rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+  integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+  crossorigin="anonymous"&gt;
 </pre>
-<p>Link the file in your <code>&lt;head&gt;</code></p>
-<pre>
-  &lt;script type="text/javascript" src="assets/javascripts/server_config.js"&gt;&lt;/script&gt;
-</pre>
+
+<h3><%= step %></h3>
+<p>Reload the page. It's a bit different...</p>

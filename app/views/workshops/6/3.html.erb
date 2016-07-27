@@ -1,0 +1,20 @@
+<%= back_link('6/2') %>
+<small>6-3</small>
+<%= forward_link('6/4', 'Ajax forms') %>
+
+<h1>Server</h1>
+
+<h3><%= step %></h3>
+<p>Our server is at: <%= Rails.application.config.app_http_protocol %>://<%= Rails.application.config.app_host %>.</p>
+
+<h3><%= step %></h3>
+<p>Create a file 'assets/javascripts/server_config.js':</p>
+<pre>
+serverUrl = "<%= Rails.application.config.app_http_protocol %>://<%= Rails.application.config.app_host %>";
+serverWebSocketUrl = "<%= Rails.application.config.app_ws_protocol %>://<%= Rails.application.config.app_host %>/cable";
+apiKey = "YOUR_API_KEY";
+</pre>
+<p>Link the file in your <code>&lt;head&gt;</code></p>
+<pre>
+  &lt;script type="text/javascript" src="assets/javascripts/server_config.js"&gt;&lt;/script&gt;
+</pre>

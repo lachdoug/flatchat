@@ -7,15 +7,6 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate
 
-  # def allow_cross_site_json_requests
-    # if request.format.json?
-    #   headers['Access-Control-Allow-Origin'] = '*'
-    #   headers['Access-Control-Allow-Methods'] = 'POST, PUT, DELETE, GET, OPTIONS'
-    #   headers['Access-Control-Request-Method'] = '*'
-    #   headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
-    # end
-  # end
-
   protected
 
   def configure_permitted_parameters
@@ -28,12 +19,17 @@ class ApplicationController < ActionController::Base
 
   # Authenticate the user with token based authentication
   def authenticate
-    return true if controller_name == 'homes' && action_name == 'show'
+    return true if public_action?
     if request.format.json?
       authenticate_token || render_json_unauthorized
     else
       authenticate_user!
     end
+  end
+
+  def public_action?
+    ( controller_name == 'homes' && action_name == 'show' ) ||
+    ( controller_name == 'fake_posts' && action_name == 'create' )
   end
 
   def authenticate_token

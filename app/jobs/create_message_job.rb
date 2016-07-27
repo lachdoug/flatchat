@@ -3,7 +3,7 @@ class CreateMessageJob < ApplicationJob
 
   def perform(message)
     ActionCable.server.broadcast 'events_channel', {event: :new_message, message: message.as_json }
-    ActionCable.server.broadcast 'server_updates_channel', {event: :new_message, message: message_html(message) }
+    # ActionCable.server.broadcast 'server_updates_channel', {event: :new_message, message: message_html(message) }
   end
 
   private

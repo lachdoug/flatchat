@@ -1,0 +1,47 @@
+<%= back_link('6/4') %>
+<small>6-5</small>
+<%= forward_link('7/1', 'Index file') %>
+
+<h1>Setup forms</h1>
+
+<h3><%= step %></h3>
+<p>Create 'assets/javascripts/ajax_setup.js':</p>
+<pre>
+var setAjaxHeaders = function() {
+  $.ajaxSetup({
+    headers: { 'Authorization' : 'Token ' + apiKey },
+    dataType: "json"
+  });
+};
+
+var bindAjaxForm = function() {
+  $('form').ajaxForm({
+    error: function(response, status, xhr, form) {
+      alert(response.responseText); },
+    success: function(response, status, xhr, form) {
+      location.reload();
+    }
+  });
+};
+
+setAjaxHeaders();
+$(document).ready(function() {
+  bindAjaxForm();
+});
+</pre>
+
+<h3><%= step %></h3>
+<p>Create 'assets/javascripts/set_form_urls.js':</p>
+<pre>
+$( document ).ready(function() {
+  document.new_room_form.action = ( serverUrl + "/rooms.json" );
+  document.new_message_form.action = ( serverUrl + "/messages.json" );
+});
+</pre>
+
+<h3><%= step %></h3>
+<p>Link the files.</p>
+<pre>
+  &lt;script type="text/javascript" src="assets/javascripts/ajax_setup.js"&gt;&lt;/script&gt;
+  &lt;script type="text/javascript" src="assets/javascripts/set_form_urls.js"&gt;&lt;/script&gt;
+</pre>

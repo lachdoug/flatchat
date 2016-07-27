@@ -19,6 +19,7 @@
 &lt;html&gt;
 
 &lt;head&gt;
+  &lt;meta charset="utf-8"/&gt;
   &lt;title&gt;Flatchat&lt;/title&gt;
 &lt;/head&gt;
 
@@ -77,16 +78,16 @@ body { font-family: arial, sans-serif; }
 &lt;style&gt;
 body { font-family: arial, sans-serif; }
 #logo { font-size: 1.5em; color: #48d; }
-#rooms { background-color: #48d; color: #fff; padding: 5px; margin-top: 5px; }
+#rooms_panel { background-color: #48d; color: #fff; padding: 5px; margin-top: 5px; }
 .room { padding: 5px; }
 .room:hover { background-color: #26b; cursor: pointer; }
-#messages { background-color: #48d; color: #fff; padding: 5px; margin-top: 5px; }
+#messages_panel { background-color: #48d; color: #fff; padding: 5px; margin-top: 5px; }
 .message { padding: 5px; }
 .username, .time_ago { display: inline-block; color: #999; }
 .username { font-weight: 700; }
 .time_ago { font-size: 0.8em; }
 @media (max-width: 767px) {
-  .rooms_collapsed {
+  .rooms {
     max-height: 100px;
     overflow-y: scroll;
   }
@@ -107,9 +108,9 @@ body { font-family: arial, sans-serif; }
 
 &lt;body&gt;
   &lt;div id="logo"&gt;Flatchat&lt;/div&gt;
-  &lt;div id="rooms"&gt;
+  &lt;div id="rooms_panel"&gt;
     &lt;p&gt;Rooms&lt;/p&gt;
-    &lt;div class="rooms_collapsed"&gt;
+    &lt;div class="rooms"&gt;
       &lt;div class="room"&gt;
         &lt;div class="username"&gt;Callie A&lt;/div&gt;
         &lt;div class="time_ago"&gt;5 minutes ago&lt;/div&gt;
@@ -122,7 +123,7 @@ body { font-family: arial, sans-serif; }
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-  &lt;div id="messages"&gt;
+  &lt;div id="messages_panel"&gt;
     &lt;p&gt;Messages - Working yet?&lt;/p&gt;
     &lt;div class="message"&gt;
       &lt;div class="username"&gt;Callie A&lt;/div&gt;
@@ -146,15 +147,7 @@ body { font-family: arial, sans-serif; }
 </pre>
 
 <h3><%= step %></h3>
-<p>Move the content of the &lt;style&gt; element to a new file 'assets/stylesheets/application.css'</p>
-<p>Remove &lt;style&gt;&lt;/style&gt;.</p>
-<p>Use the css in 'index.html' by adding a link to the &lt;head&gt; tag.</p>
-<pre>
-  &lt;link rel="stylesheet" href="assets/stylesheets/application.css"&gt;
-</pre>
-
-<h3><%= step %></h3>
 <p>Comments</p>
 <pre>
-//  This is a comment.
+//  This is a CSS comment.
 </pre>
