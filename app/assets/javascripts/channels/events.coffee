@@ -8,11 +8,7 @@ App.events = App.cable.subscriptions.create "EventsChannel",
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
-    # alert(JSON.stringify(data['message']))
-    if data['event'] == 'new_room'
-      $('#rooms_events').html(JSON.stringify(data))
-    else
-      $('#messages_events').html(JSON.stringify(data))
+    $('#server_events').html(JSON.stringify(data))
     return
 
   speak: (data) ->

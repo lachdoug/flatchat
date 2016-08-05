@@ -1,0 +1,16 @@
+<h2><i class="fa fa-tablet"></i> Client</h2>
+
+<p>Here are the files for an example of the client app:
+  <a href="/flatchat_example_client.zip">Download example client</a>.</p>
+
+<p>Extract the 'flatchat_example_client' directory from the zip file.</p>
+<p>In the 'scripts' directory, change the contents of the
+   'server_config.js' file to:</p>
+<pre>
+serverUrl = "<%= "#{Rails.application.config.app_http_protocol}://#{Rails.application.config.app_host}" %>";
+serverWebSocketUrl = "<%= "#{Rails.application.config.app_ws_protocol}://#{Rails.application.config.app_host}" %>/cable";
+apiToken = "<%= current_user.api_token %>";
+</pre>
+<p><i>Note that this API token is from your user account and is unique to you.
+  The server uses this token to identify you when your app connects with it.</i></p>
+<p>Open the 'index.html' file in your browser.</p>

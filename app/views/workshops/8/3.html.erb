@@ -2,20 +2,21 @@
 <small>8-3</small>
 <%= forward_link('8/4', 'Room links') %>
 
-<h1>Insert data</h1>
+<h1>Render rooms</h1>
 
 <h3><%= step %></h3>
-<p>Change 'assets/javasripts/get_rooms.js'</p>
+<p>Change 'scripts/get_rooms.js' to:</p>
 <pre>
-$( document ).ready(function() {
-  loadRooms();
-});
-
-function loadRooms() {
-  $.get(serverUrl + "/rooms.json", function(rooms) {
+var loadRooms = function() {
+  $.getJSON(serverUrl + "/rooms.json", function(rooms) {
     $.each(rooms, function(index, room){
       $('#rooms').append(roomHtml(room));
     });
+    // bindTimeago();
   });
 };
+
+$( document ).ready(function() {
+  loadRooms();
+});
 </pre>

@@ -1,36 +1,33 @@
 <%= back_link('2/6') %>
 <small>2-7</small>
-<%= forward_link('3/1', 'Variables') %>
+<%= forward_link('2/8', 'Fonts') %>
 
-<h1>Forms</h1>
-
-<h3><%= step %></h3>
-<% form_url = Rails.application.config.app_http_protocol + '://' +
-              Rails.application.config.app_host + '/fake_post.json' %>
-<p>Add this form code under <code>#logo</code>
-<pre>
-&lt;form action="<%= form_url %>" method="post"&gt;
-  &lt;input name="name" type="text" placeholder="What is your name?"&gt;
-  &lt;input name="answer[spelling]" type="text" placeholder="How do you spell dog?"&gt;
-  &lt;input name="answer[maths]" type="text" placeholder="What is 1+2?"&gt;
-  &lt;input type="submit" value="Submit"&gt;
-&lt;/form&gt;
-</pre>
-<p>Test the form. You should see parameters. Press your back button.</p>
-<p>Delete the form HTML.</p>
+<h1>Images</h1>
 
 <h3><%= step %></h3>
-<p>Add this form code to the top of <code>#rooms_panel</code>
+<p>Save the <a href="client_logo.png">Flatchat logo</a> to 'flatchat/logo.png'.</p>
+
+<h3><%= step %></h3>
+<p>Change the <code>&lt;div id="logo"&gt;</code> element to:</p>
 <pre>
-&lt;form id="new_room_form" name="new_room_form" method="post"&gt;
-  &lt;input name="room[name]" id="input_room_name" placeholder="New room" type="text" autocomplete="off"&gt;
-&lt;/form&gt;
+&lt;div id="logo"&gt;
+  &lt;img src="logo.png"&gt;&lt;/img&gt;
+  Flatchat
+&lt;/div&gt;
 </pre>
-<p>Add this form code to the top of <code>#messages_panel</code>
+
+<p>Reload the page.</p>
+
+<p>Add to css file:</p>
 <pre>
-&lt;form id="new_message_form" name="new_message_form" method="post"&gt;
-  &lt;input name="message[room_id]" id="input_message_room_id" placeholder="New message" type="hidden"&gt;
-  &lt;input name="message[body]" id="input_message_body" placeholder="New message" type="text" autocomplete="off"&gt;
-&lt;/form&gt;
+#logo img { vertical-align: middle; margin-top: -3px; height: 24px; }
 </pre>
-<p>These forms won't work just yet...</p>
+<p>Reload the page.</p>
+
+<h3><%= step %></h3>
+
+<p>Add to <code>&lt;head&gt;</code> (put it above the link to 'application.css'):</p>
+<pre>
+&lt;link rel="shortcut icon" href="logo.png"&gt;
+</pre>
+<p>Reload the page. To get the browser to load the icon you may need to open file and reopen tab.</p>

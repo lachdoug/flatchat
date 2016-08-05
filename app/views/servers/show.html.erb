@@ -1,19 +1,27 @@
-<h2>Server</h2>
-<div class="row">
-  <div class="col-md-6">
-    <h3>Rooms</h3>
-    <pre id="rooms_events">
-    </pre>
-    <div id="rooms">
-      <%= render @rooms %>
+<h2><i class="fa fa-server"></i> Server</h2>
+
+<div id="server_events">Events</div>
+
+<div>
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#rooms_tab" data-toggle="tab">Rooms</a></li>
+    <li><a href="#messages_tab" data-toggle="tab">Messages</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="rooms_tab">
+      <div class="tab-pane-content">
+        <div id="rooms">
+          <%= render @rooms %>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane" id="messages_tab">
+      <div class="tab-pane-content">
+        <div id="messages">
+          <%= render @messages %>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="col-md-6">
-    <h3>Messages</h3>
-    <pre id="messages_events">
-    </pre>
-    <div id="messages">
-      <%= render @messages %>
-    </div>
-  </div>
+
 </div>

@@ -1,18 +1,15 @@
 class MessagesController < ApplicationController
 
-  # before_action :allow_cross_site_json_requests
-
   def show
     @message = Message.find(params[:id])
     respond_to do |format|
-      format.json { render json: @message }
+      format.json { render json: json_escape(@message) }
     end
   end
 
   def create
     @message = Message.new(strong_params.merge({user_id: current_user.id}))
     if @message.save
-      CreateMessageJob.perform_now(@message)
       respond_to do |format|
         format.json { render json: @message, status: 201 }
       end

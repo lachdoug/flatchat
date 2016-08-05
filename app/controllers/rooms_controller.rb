@@ -11,13 +11,9 @@ class RoomsController < ApplicationController
   end
 
   def create
-
-p "current_user #{current_user}"
-
     @room = Room.new(strong_params.merge({user_id: current_user.id}))
     if @room.save
       render json: @room.to_json, status: 201
-      CreateRoomJob.perform_now(@room)
     else
       render json: { errors: @room.errors.full_messages }.to_json, status: 422
     end

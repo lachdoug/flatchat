@@ -1,26 +1,59 @@
 <%= back_link('2/5') %>
 <small>2-6</small>
-<%= forward_link('2/7', 'Forms') %>
+<%= forward_link('2/7', 'Images') %>
 
-<h1>Icons</h1>
-
-<h3><%= step %></h3>
-<p><a href="http://fontawesome.io"
-      target="flatchat_workshop">Font Awesome</a></p>
+<h1>Placeholder data</h1>
 
 <h3><%= step %></h3>
-<p>Download the zip file. Extract 'css/font-awesome.min.css'. Put it in the 'assets/stylesheets/' directory</p>
-
-
-<h3><%= step %></h3>
-<p>Add to <code>&lt;head&gt;</code></p>
+<p>Add some placeholder data. Change 'index.html' to:</p>
 <pre>
-&lt;link rel="stylesheet" href="assets/stylesheets/font-awesome.min.css"&gt;
-</pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
 
-<h3><%= step %></h3>
-<p>Add to each <code>.message_body</code>:</p>
-<pre>
-&lt;i class="fa fa-comment-o"&gt;&lt;/i&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"/&gt;
+  &lt;title&gt;Flatchat&lt;/title&gt;
+  &lt;link rel="stylesheet" href="styles/application.css"&gt;
+  &lt;link rel="stylesheet" href="styles/theme.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;div id="logo"&gt;Flatchat&lt;/div&gt;
+  &lt;div id="rooms_panel"&gt;
+    &lt;div id="rooms"&gt;
+      &lt;div class="room"&gt;
+        &lt;div class="username"&gt;Callie A&lt;/div&gt;
+        &lt;div class="time_ago"&gt;5 minutes ago&lt;/div&gt;
+        &lt;div class="room_name"&gt;Working yet?&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="room"&gt;
+        &lt;div class="username"&gt;Alf S&lt;/div&gt;
+        &lt;div class="time_ago"&gt;10 minutes ago&lt;/div&gt;
+        &lt;div class="room_name"&gt;First room&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div id="messages_panel"&gt;
+    &lt;div id="selected_room_name"&gt;Working yet?&lt;/div&gt;
+    &lt;div class="messages"&gt;
+      &lt;div class="message"&gt;
+        &lt;div class="username"&gt;Callie A&lt;/div&gt;
+        &lt;div class="time_ago"&gt;4 minutes ago&lt;/div&gt;
+        &lt;div class="message_body"&gt;Oh.&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="message"&gt;
+        &lt;div class="username"&gt;Lilly M&lt;/div&gt;
+        &lt;div class="time_ago"&gt;5 minutes ago&lt;/div&gt;
+        &lt;div class="message_body"&gt;No. These are hard-coded fake messages. Sorry.&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="message"&gt;
+        &lt;div class="username"&gt;Callie A&lt;/div&gt;
+        &lt;div class="time_ago"&gt;6 minutes ago&lt;/div&gt;
+        &lt;div class="message_body"&gt;Is this data from the server?&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
 </pre>
-<p>Add icon 'fa-comments-o' to each <code>.room_name</code>.</p>

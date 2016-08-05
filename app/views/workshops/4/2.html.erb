@@ -2,20 +2,19 @@
 <small>4-2</small>
 <%= forward_link('4/3', 'Grid') %>
 
-<h1>Our CSS</h1>
+<h1>Apply styles</h1>
 
 <h3><%= step %></h3>
-<p>Create a new file 'assets/stylesheets/application.css'</p>
-
-<h3><%= step %></h3>
-<p>Add these new styles.</p>
+<p>Change 'application.css' to:</p>
 <pre>
 body { color: #48d; padding: 5px; word-wrap: break-word; }
-#logo { font-size: 1.5em; color: #48d; }
-#logo img { vertical-align: middle; margin-top: -3px; }
-#rooms { margin-top: 10px; }
+#logo { font-size: 1.5em }
+#logo img { vertical-align: middle; margin-top: -3px; height: 24px; }
+#rooms_panel { margin-top: 10px; }
 .room { padding: 5px; }
-#messages { margin-top: 10px; }
+.room:hover { background-color: #eee; cursor: pointer; }
+#messages_panel { margin-top: 10px; }
+#selected_room_name { padding: 5px; font-size: 1.2em; }
 .message { padding: 5px; }
 .message_body { font-family: 'Chewy', cursive; font-size: 1.5em; }
 .username, .time_ago { display: inline-block; color: #999; }
@@ -25,11 +24,3 @@ body { color: #48d; padding: 5px; word-wrap: break-word; }
 
 <h3><%= step %></h3>
 <p>Add the <code>class="form-control"</code> to each <code>input</code>.</p>
-
-
-<h3><%= step %></h3>
-<p>Remove <code>&lt;style&gt;&lt;/style&gt;</code>.</p>
-<p>Include the css in 'index.html' by adding a link to the bottom of the <code>&lt;head&gt;</code> tag.</p>
-<pre>
-  &lt;link rel="stylesheet" href="assets/stylesheets/application.css"&gt;
-</pre>

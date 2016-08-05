@@ -1,0 +1,67 @@
+<%= back_link('8/6') %>
+<small>9-1</small>
+<%= forward_link('9/2', 'Form errors') %>
+
+<h1>Render updates</h1>
+
+<h3><%= step %></h3>
+<p>The server provides a websocket at <code><%= Rails.application.config.app_ws_protocol %>://<%= Rails.application.config.app_host %>/cable</code>. </p>
+<p>When a room or message is added, the server sends an update message down the socket.</p>
+<p>We can handle the message and update our view with new content.</p>
+
+<h3><%= step %></h3>
+<p>Create a file 'scripts/update_events.js'</p>
+<pre>
+$( document ).ready(function() {
+
+  webSocketConnection = new WebSocket(serverWebSocketUrl + '?token=' + apiToken);
+
+  webSocketConnection.onopen = function(serverEvent) {
+    webSocketConnection.send(
+      JSON.stringify(
+        { "command": "subscribe",
+          "identifier": JSON.stringify({"channel":"EventsChannel"})})
+    );
+  };
+
+  webSocketConnection.onmessage = function(serverEvent) {
+    processEvent(serverEvent);
+  };
+
+});
+
+var processEvent = function(serverEvent) {
+  var eventData = JSON.parse(serverEvent.data);
+  if (eventData.identifier !== undefined) {
+    var eventMessage = eventData.message;
+    if (eventMessage !== undefined) {
+      var eventType = eventMessage.event;
+      if (eventType === "new_room") { addRoom(eventMessage) };
+      if (eventType === "new_message") { addMessage(eventMessage) };
+    };
+  };
+};
+
+var addRoom = function(eventMessage) {
+  $('#rooms').prepend(roomHtml(JSON.parse(eventMessage.room)));
+  $('#rooms').children().first().click();
+  $('#input_room_name').val('');
+  bindTimeago();
+};
+
+var addMessage = function(eventMessage) {
+  var updateRoomId = JSON.parse(eventMessage.message).room_id.toString();
+  var selectedRoomId = $("#input_message_room_id").val();
+  if ( updateRoomId === selectedRoomId) {
+    $("#messages").prepend(messageHtml(JSON.parse(eventMessage.message)));
+    $('#input_message_body').val('');
+    bindTimeago();
+  };
+};
+</pre>
+
+<h3><%= step %></h3>
+<p>Add to <code>&lt;head&gt;</code>, above the 'application.css' link:</p>
+<pre>
+&lt;script type="text/javascript" src="scripts/update_events.js"&gt;&lt;/script&gt;
+</pre>

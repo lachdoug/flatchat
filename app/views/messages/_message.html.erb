@@ -1,5 +1,6 @@
-<p>
+<p data-room-id="<%= message.room_id %>">
   User: <%= message.user.username %><br>
   Message: <%= message.body %><br>
+  Room id: <%= message.room_id %><br>
   Created: <%= message.created_at %>
 </p>

@@ -1,0 +1,33 @@
+<%= back_link('8/5') %>
+<small>8-6</small>
+<%= forward_link('9/1', 'Render updates') %>
+
+<h1>Time ago</h1>
+
+<h3><%= step %></h3>
+<p><a href="http://timeago.yarp.com/"
+      target="http://timeago.yarp.com/">Timeago</a></p>
+
+<h3><%= step %></h3>
+<p>Add to <code>&lt;head&gt;</code>, above 'server_config.js':</p>
+<pre>
+&lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.5.3/jquery.timeago.min.js"&gt;&lt;/script&gt;
+</pre>
+
+<h3><%= step %></h3>
+<p>Create file 'scripts/time_ago.js':</p>
+
+<pre>
+function bind_time_ago() {
+  $("time.timeago").timeago();
+};
+</pre>
+
+<h3><%= step %></h3>
+<p>Add to <code>&lt;head&gt;</code>, above the 'application.css' link:</p>
+<pre>
+&lt;script type="text/javascript" src="scripts/time_ago.js"&gt;&lt;/script&gt;
+</pre>
+
+<h3><%= step %></h3>
+<p>Remove comment-out. In 'get_rooms.js' and 'get_room_messages.js', change <code>// bindTimeago();</code> to <code>bindTimeago();</code>.</p>

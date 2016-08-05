@@ -8,6 +8,24 @@
 <p><code>&lt;!DOCTYPE html&gt;</code></p>
 
 <h3><%= step %></h3>
+<p>Minimum HTML5 document</p>
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+  &lt;meta charset="utf-8"/&gt;
+  &lt;title&gt;Empty document&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  This is where page content goes.
+&lt;/body&gt;
+
+&lt;/html&gt;
+</pre>
+
+<h3><%= step %></h3>
 <p>HTML element:</p>
 <pre>
 &lt;tag attribute="value"&gt;
@@ -35,7 +53,7 @@
 <code>form, input, button</code>
 </p>
 <p><a href="https://www.w3.org/TR/html-markup/elements-by-function.html#elements-by-function"
-      target="flatchat_workshop">W3 HTML language reference</a></p>
+      target="https://www.w3.org/TR/html-markup/elements-by-function.html#elements-by-function">W3 HTML language reference</a></p>
 
 <h3><%= step %></h3>
 <p>Attributes<br>
@@ -48,13 +66,19 @@
 </pre>
 
 <h3><%= step %></h3>
+<p>Comments</p>
+<pre>
+&lt;!--  This is a comment. --&gt;
+</pre>
+
+<h3><%= step %></h3>
 <p>Change 'index.html' to:</p>
 <pre>
 &lt;!DOCTYPE html&gt;
-&lt;meta charset="utf-8"/&gt;
 &lt;html&gt;
 
 &lt;head&gt;
+  &lt;meta charset="utf-8"/&gt;
   &lt;title&gt;Flatchat&lt;/title&gt;
 &lt;/head&gt;
 
@@ -67,9 +91,3 @@
 &lt;/html&gt;
 </pre>
 <p>Reload the file in your browser. Inspect the HTML.</p>
-
-<h3><%= step %></h3>
-<p>Comments</p>
-<pre>
-&lt;!--  This is a comment. --&gt;
-</pre>

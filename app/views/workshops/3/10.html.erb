@@ -1,6 +1,6 @@
 <%= back_link('3/9') %>
 <small>3-10</small>
-<%= forward_link('3/11', 'Core') %>
+<%= forward_link('3/11', 'Standard library') %>
 
 <h1>Data structures</h1>
 
@@ -17,14 +17,14 @@
       { "id": 5, "room_id": 2, "user": "Lilly M", "created_at": "2016-07-24T17:28:35.941Z",
           "body": "No. These are hard-coded fake messages. Sorry." },
       { "id": 4, "room_id": 2, "user": "Callie A", "created_at": "2016-07-24T17:27:55.978Z",
-          "body": "Can I post messages now?" } ] }
+          "body": "Is this data from the server?" } ] }
 </pre>
 
 <h3><%= step %></h3>
 
 <p>We'll get a room in JSON format. Parse JSON to get an object:</p>
 <pre>
-room_json = "{\"id\":2,\"created_at\":\"2016-07-24T17:27:15.978Z\",\"name\":\"Working yet?\",\"user\":\"Callie A\",\"messages\":[{\"id\":6,\"room_id\":2,\"user\":\"Callie A\",\"created_at\":\"2016-07-24T17:29:05.462Z\",\"body\":\"Oh.\"},{\"id\":5,\"room_id\":2,\"user\":\"Lilly M\",\"created_at\":\"2016-07-24T17:28:35.941Z\",\"body\":\"No. These are hard-coded fake messages. Sorry.\"},{\"id\":4,\"room_id\":2,\"user\":\"Callie A\",\"created_at\":\"2016-07-24T17:27:55.978Z\",\"body\":\"Can I post messages now?\"}]}"
+room_json = "{\"id\":2,\"created_at\":\"2016-07-24T17:27:15.978Z\",\"name\":\"Working yet?\",\"user\":\"Callie A\",\"messages\":[{\"id\":6,\"room_id\":2,\"user\":\"Callie A\",\"created_at\":\"2016-07-24T17:29:05.462Z\",\"body\":\"Oh.\"},{\"id\":5,\"room_id\":2,\"user\":\"Lilly M\",\"created_at\":\"2016-07-24T17:28:35.941Z\",\"body\":\"No. These are hard-coded fake messages. Sorry.\"},{\"id\":4,\"room_id\":2,\"user\":\"Callie A\",\"created_at\":\"2016-07-24T17:27:55.978Z\",\"body\":\"Is this data from the server?\"}]}"
 var room = JSON.parse(room_json);
 room;
 var messages = room.messages;

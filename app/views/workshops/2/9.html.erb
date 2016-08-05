@@ -1,0 +1,35 @@
+<%= back_link('2/8') %>
+<small>2-9</small>
+<%= forward_link('2/10', 'Forms') %>
+
+<h1>Icons</h1>
+
+<h3><%= step %></h3>
+<p>Popular icon libraries include:</p>
+<ul>
+  <li><a href="http://fontawesome.io"
+        target="http://fontawesome.io">Font Awesome</a></li>
+  <li><a href="https://design.google.com/icons/"
+        target="https://design.google.com/icons/">Google icons</a></li>
+</ul>
+
+<h3><%= step %></h3>
+<p>We will use Font Awesome. Add to <code>&lt;head&gt;</code>, above the 'application.css' link:</p>
+<pre>
+&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"&gt;
+</pre>
+
+<h3><%= step %></h3>
+<p>Use <code>&lt;i&gt;</code> tags to create icon elements.</p>
+<p><code>&lt;i class="fa fa-comment-o"&gt;&lt;/i&gt;</code> for <i class="fa fa-comment-o"></i></p>
+<p><code>&lt;i class="fa fa-comments-o"&gt;&lt;/i&gt;</code> for <i class="fa fa-comments-o"></i>.</p>
+
+<h3><%= step %></h3>
+<p>Add <code>&lt;i class="fa fa-comment-o"&gt;&lt;/i&gt;</code> to each <code>&lt;div class="message_body"&gt;</code>:</p>
+<pre>
+&lt;div class="room_name"&gt;&lt;i class="fa fa-comment-o"&gt;&lt;/i&gt; Is this data from the server?&lt;/div&gt;
+</pre>
+<p>Add <code>&lt;i class="fa fa-comments-o"&gt;&lt;/i&gt;</code> to each <code>&lt;div class="room_name"&gt;</code>:</p>
+<pre>
+&lt;div class="room_name"&gt;&lt;i class="fa fa-comments-o"&gt;&lt;/i&gt; Working yet?&lt;/div&gt;
+</pre>

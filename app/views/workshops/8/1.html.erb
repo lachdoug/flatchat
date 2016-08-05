@@ -5,20 +5,20 @@
 <h1>Get data</h1>
 
 <h3><%= step %></h3>
-<p>Create a file 'assets/javasripts/get_rooms.js'</p>
+<p>Create a file 'scripts/get_rooms.js'</p>
 <pre>
 $( document ).ready(function() {
   $.get(serverUrl + "/rooms.json", function(rooms) {
     $.each(rooms, function(index, room){
-      $('#rooms').append(room.id + ' - ' + room.name);
+      $('#rooms').append('&lt;p&gt;' + room.id + '&lt;br&gt;' + room.user + '&lt;br&gt;' + room.name + '&lt;br&gt;' + room.created_at + '&lt;/p&gt;');
     });
   });
 });
 </pre>
 
 <h3><%= step %></h3>
-<p>Link the file in <code>&lt;head&gt;</code></p>
+<p>Add to <code>&lt;head&gt;</code>, above the 'application.css' link:</p>
 <pre>
-  &lt;script type="text/javascript" src="assets/javascripts/get_rooms.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="scripts/get_rooms.js"&gt;&lt;/script&gt;
 </pre>
 <p>Reload.</p>

@@ -19,16 +19,16 @@ double(double(2));
 
 <h3><%= step %></h3>
 <pre>
-function squareMetresToHa(area_square_m) { return area_square_m/10000; };
-function area(width_m, length_m) { var area_m2 = width_m * length_m; return squareMetresToHa(area_m2) + ' ha'; };
+function squareMetresToHectares(area_square_m) { return area_square_m/10000; };
+function area(width_m, length_m) { var area_m2 = width_m * length_m; return squareMetresToHectares(area_m2) + ' ha'; };
 area(200, 400);
 </pre>
 
 <h3><%= step %></h3>
 <p>Assign functions to variables.</p>
 <pre>
-var won = function() { alert("You won!")};
-var lost = function() { alert("You lost!")};
+var won = function() { alert("You won!") };
+var lost = function() { alert("You lost!") };
 var score =  Math.random();
 if (score > 0.5) won(); else lost();
 </pre>

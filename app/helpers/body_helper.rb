@@ -1,10 +1,10 @@
 module BodyHelper
 
   def page_body(body)
-    content_tag(:div, class: 'container-fluid') do
+    content_tag(:div, class: 'flatchat_page container-fluid') do
       content_tag(:div, class: "page_header clearfix") do
-        ( controller_name == 'workshops' ? workshop_index_link : ''.to_s.html_safe ) +
-        ( controller_name == 'homes' ? ''.to_s.html_safe : home_link )
+        ( controller_name == 'workshops' ? workshop_index_link : ''.html_safe ) +
+        ( controller_name == 'homes' ? ''.html_safe : home_link )
       end +
       flash_messages +
       body

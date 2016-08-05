@@ -1,0 +1,30 @@
+<%= back_link('9/1') %>
+<small>9-2</small>
+<%= forward_link('9/3', 'Improving the app') %>
+
+<h1>Form errors</h1>
+
+<h3><%= step %></h3>
+<p>Let's render form errors in the view, rather than in an alert.</p>
+
+<h3><%= step %></h3>
+<p>Change 'scripts/ajax_setup.js' to:</p>
+<pre>
+var bindAjaxForm = function() {
+  $('form').ajaxForm({
+    error: function(request, textStatus, errorThrown, form) {
+      var errors = JSON.parse(request.responseText).errors;
+      form.append(errorsHtml(errors));
+    }
+  });
+};
+
+$.ajaxSetup({
+  headers: { 'Authorization' : 'Token ' + apiToken },
+  dataType: "json"
+});
+
+$(document).ready(function() {
+  bindAjaxForm();
+});
+</pre>

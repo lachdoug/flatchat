@@ -2,7 +2,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
   def change
     create_table :users do |t|
       ## Add API key
-      t.string :api_key
+      t.string :api_token
 
       ## Database authenticatable
       # t.string :email,              null: false, default: ""

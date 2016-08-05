@@ -1,21 +1,76 @@
 <%= back_link('2/4') %>
 <small>2-5</small>
-<%= forward_link('2/6', 'Icons') %>
+<%= forward_link('2/6', 'Placeholder data') %>
 
-<h1>Fonts</h1>
-
-<h3><%= step %></h3>
-<p><a href="https://fonts.google.com/specimen/Chewy?query=chewy"
-      target="flatchat_workshop">Google Fonts - Chewy</a></p>
+<h1>CSS</h1>
 
 <h3><%= step %></h3>
-<p>Add to <code>&lt;head&gt;</code></p>
+<p>It can be easier to manage your style definitions when they are in a separate file.
+   Let's move our style definitions from
+   the <code>&lt;style&gt;&lt;/style&gt;</code> element to a css file.</p>
+
+<h3><%= step %></h3>
+<p>Delete the <code>&lt;style&gt;&lt;/style&gt;</code> element.</p>
+
+<h3><%= step %></h3>
+<p>Create a new file 'styles/application.css'</p>
 <pre>
-&lt;link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet"&gt;
+body { font-family: arial, sans-serif; color: #48d; word-wrap: break-word; }
+#logo { font-size: 1.5em; }
+#logo img { vertical-align: middle; margin-top: -3px; height: 24px; }
+#rooms_panel { padding: 10px; margin-top: 5px; }
+.room { padding: 5px; }
+.room:hover { background-color: #eee; cursor: pointer; }
+#messages_panel { padding: 10px; margin-top: 5px; }
+#selected_room_name { padding: 5px; font-size: 1.2em; }
+.message { padding: 5px; }
+.username, .time_ago { display: inline-block; color: #999; }
+.username { font-weight: 700; }
+.time_ago { font-size: 0.8em; }
+.message_body { font-family: 'Chewy', cursive; font-size: 1.5em; }
+input { width: 100%; }
+@media (max-width: 767px) {
+  .rooms {
+    max-height: 100px;
+    overflow-y: scroll;
+  }
+}
+@media (min-width: 768px) {
+  #rooms_panel {
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+  }
+  #messages_panel {
+    display: inline-block;
+    vertical-align: top;
+    width: 70%;
+  }
+}
+</pre>
+<p>Notice that there are some new selectors that don't refer to tags
+   in our 'index.html'. We'll create new html in a moment that will use them.</p>
+
+<h3><%= step %></h3>
+<p>Include the css in 'index.html' by adding a link to the bottom of
+   the <code>&lt;head&gt;</code> tag.</p>
+<pre>
+&lt;link rel="stylesheet" href="styles/application.css"&gt;
 </pre>
 
 <h3><%= step %></h3>
-<p>Add to 'application.css':</p>
+<p>You may have some of your own style definitions that you would like to apply.
+   Create another css file and put your personal style definitions in there.</p>
+<p>Call your new css file 'theme.css', then include it with another link at
+  the bottom of the <code>&lt;head&gt;</code> tag.</p>
+<p>Be sure to put this link after the link to 'application.css'. That way your
+  styles will be applied after the 'application.css' styles.</p>
 <pre>
-.message_body { font-family: 'Chewy', cursive; font-size: 1.5em; }
+&lt;link rel="stylesheet" href="styles/theme.css"&gt;
+</pre>
+
+<h3><%= step %></h3>
+<p>Comments</p>
+<pre>
+//  This is a CSS comment.
 </pre>

@@ -4,13 +4,6 @@ class ServerUpdatesChannel < ApplicationCable::Channel
     stream_from "server_updates_channel"
   end
 
-  # def unsubscribed
-  #   # Any cleanup needed when channel is unsubscribed
-  # end
-  #
   # def speak(data)
-  #   # p "send event #{data}"
-  #   #
-  #   # ActionCable.server.broadcast 'server_updates_channel', server_update_data
   # end
 end

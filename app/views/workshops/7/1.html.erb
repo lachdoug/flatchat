@@ -9,52 +9,51 @@
 
 <pre>
 &lt;!DOCTYPE html&gt;
-
 &lt;html&gt;
 
 &lt;head&gt;
-&lt;meta charset="utf-8"/&gt;
-
-  <!-- Set page title and favicon -->
+  &lt;meta charset="utf-8"/&gt;
   &lt;title&gt;Flatchat&lt;/title&gt;
   &lt;link rel="shortcut icon" href="logo.png"&gt;
-
-  <!-- Load Chewy font -->
-  &lt;link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet"&gt;
-  <!-- Load Font Awesome -->
-  &lt;link rel="stylesheet" href="assets/fonts/font-awesome-4.6.3/css/font-awesome.min.css"&gt;
-  <!-- Load Bootstrap CSS -->
+  &lt;link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Chewy"&gt;
+  &lt;link rel="stylesheet" href="fonts/font-awesome-4.6.3/css/font-awesome.min.css"&gt;
   &lt;link rel="stylesheet"
     href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
     integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
     crossorigin="anonymous"&gt;
-
-  <!-- Load stylesheet -->
-  &lt;link rel="stylesheet" href="assets/stylesheets/application.css"&gt;
-
+  &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"&gt;&lt;/script&gt;
+  &lt;script src="https://oss.maxcdn.com/jquery.form/3.50/jquery.form.min.js"&gt;&lt;/script&gt;
+  &lt;script type="text/javascript" src="scripts/server_config.js"&gt;&lt;/script&gt;
+  &lt;script type="text/javascript" src="scripts/ajax_setup.js"&gt;&lt;/script&gt;
+  &lt;script type="text/javascript" src="scripts/set_form_urls.js"&gt;&lt;/script&gt;
+  &lt;link rel="stylesheet" href="styles/application.css" /&gt;
+  &lt;link rel="stylesheet" href="styles/theme.css" /&gt;
 &lt;/head&gt;
 
 &lt;body&gt;
   &lt;div class="container"&gt;
     &lt;div class="row"&gt;
       &lt;div id="logo"&gt;
-        &lt;img src="logo.png" height="24"&gt;&lt;/img&gt;
-        &lt;span&gt;Flatchat&lt;span&gt;
+        &lt;img src="logo.png"&gt;&lt;/img&gt;
+        Flatchat
       &lt;/div&gt;
       &lt;div id="rooms_panel" class="col-sm-4 col-md-3"&gt;
         &lt;form id="new_room_form" name="new_room_form" method="post"&gt;
-          &lt;input name="room[name]" id="input_room_name" placeholder="New room" type="text" class="form-control" autocomplete="off"&gt;
+          &lt;input class="form-control" name="room[name]" id="input_room_name" placeholder="New room" type="text" autocomplete="off"&gt;
         &lt;/form&gt;
-        &lt;div class="rooms"&gt;
+        &lt;div id="new_room_errors"&gt;&lt;/div&gt;
+        &lt;div id="rooms"&gt;
         &lt;/div&gt;
       &lt;/div&gt;
-      &lt;div id="messages_panel" class="col-sm-10 col-md-9"&gt;
+      &lt;div id="messages_panel" class="col-sm-8 col-md-9" style="display: none;"&gt;
         &lt;form id="new_message_form" name="new_message_form" method="post"&gt;
-          &lt;input name="message[room_id]" id="input_message_room_id" placeholder="New message" type="hidden"&gt;
-          &lt;input name="message[body]" id="input_message_body" placeholder="New message" type="text" class="form-control" autocomplete="off"&gt;
+          &lt;input class="form-control" name="message[room_id]" id="input_message_room_id" placeholder="New message" type="hidden"&gt;
+          &lt;input class="form-control" name="message[body]" id="input_message_body" placeholder="New message" type="text" autocomplete="off"&gt;
         &lt;/form&gt;
-        &lt;div id="room_name"&gt;&lt;/div&gt;
-        &lt;div id="messages" class="messages"&gt;
+        &lt;div id="new_message_errors"&gt;&lt;/div&gt;
+        &lt;div id="selected_room_name"&gt;&lt;/div&gt;
+        &lt;div class="messages"&gt;
+        &lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;

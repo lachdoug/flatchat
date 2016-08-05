@@ -5,17 +5,17 @@
 <h1>JSON</h1>
 
 <h3><%= step %></h3>
-<p>JSON - object data formatted as a string. Used as a lightweight data-interchange format.</p>
+<p>JSON: object data formatted as a string; used as a lightweight data-interchange format.</p>
 <pre>
 '{ "id": 4,
    "room_id": 2,
    "user": "Callie A",
-   "body": "Can I post messages now?",
+   "body": "Is this data from the server?",
    "created_at": "2016-07-24T17:27:55.961Z" }'
 </pre>
-<p>You'll normally see it as:</p>
+<p>You'll often see it with quotation marks escaped, looking like:</p>
 <pre>
-"{\"id\":4,\"room_id\":2,\"user\":\"Callie A\",\"body\":\"Can I post messages now?\",\"created_at\":\"2016-07-24T17:27:55.961Z\" }"
+"{\"id\":4,\"room_id\":2,\"user\":\"Callie A\",\"body\":\"Is this data from the server?\",\"created_at\":\"2016-07-24T17:27:55.961Z\" }"
 </pre>
 <p>To extract data, parse JSON to create an object.</p>
 <pre>

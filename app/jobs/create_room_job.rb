@@ -3,7 +3,9 @@ class CreateRoomJob < ApplicationJob
 
   def perform(room)
     ActionCable.server.broadcast 'events_channel', {event: :new_room, room: room.to_json}
-    # ActionCable.server.broadcast 'server_updates_channel', {event: :new_room, room: room_html(room) }
+    p "-------------------- room created1"
+    ActionCable.server.broadcast 'server_updates_channel', {event: :new_room, room: room_html(room) }
+    p "-------------------- room created2"
   end
 
   private

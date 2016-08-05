@@ -1,6 +1,6 @@
 <%= back_link('2/1') %>
 <small>2-2</small>
-<%= forward_link('2/3', 'CSS') %>
+<%= forward_link('2/3', 'Style definitions') %>
 
 <h1>Styling</h1>
 
@@ -34,14 +34,18 @@
 <code>cursor: pointer;</code>
 </p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference"
-    target="flatchat_workshop">MDN CSS reference</a>
+    target="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">MDN CSS reference</a>
 
 <h3><%= step %></h3>
-<p>Change <code>body</code> and reload:
+<p>Let's apply some styling. Change <code>body</code> and reload:
 <pre>
-&lt;body style="font-family: arial, sans-serif; color: #48d;"&gt;
-  &lt;h1&gt;Flatchat&lt;/h1&gt;
+&lt;body style="font-family: arial, sans-serif;"&gt;
+  &lt;h1 style="color: #48d;"&gt;Flatchat&lt;/h1&gt;
   &lt;div style="background-color: #48d; color: #fff; padding: 10px; margin-top: 5px;"&gt;Rooms&lt;/div&gt;
   &lt;div style="background-color: #48d; color: #fff; padding: 10px; margin-top: 5px;"&gt;Messages&lt;/div&gt;
 &lt;/body&gt;
 </pre>
+<p>Applying styles directly to HTML tags, as we have just done, is
+   called in-line styling. This method is fine for a small html document,
+   but it leads to repetition as a document grows. For this reason, the use of style definitions
+   is generally preferred over in-line styling.</p>

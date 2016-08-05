@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   mount ActionCable.server => '/cable'
 
@@ -10,11 +11,7 @@ Rails.application.routes.draw do
   resources :rooms, only: [:index, :show, :create]
   resources :messages, only: [:show, :create]
   resources :users, only: [:show]
-  namespace :admin, module: :admins do
-    resources :rooms, only: [:destroy]
-  end
-
+  resource :client
   resource :fake_post, only: [:create]
-
 
 end

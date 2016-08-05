@@ -20,8 +20,14 @@
     <a href="/server" class="btn btn-lg">
       <i class="fa fa-server"></i> Server
     </a>
-    <a href="/example_clients/flatchat_go" class="btn btn-lg">
+    <a href="/client" class="btn btn-lg">
       <i class="fa fa-tablet"></i> Client
     </a>
+    <% if current_user && current_user.is_admin? %>
+      <a href="/admin" class="btn btn-lg">
+        <i class="fa fa-database"></i> Database
+      </a>
+    <% end %>
+
   </div>
 </div>

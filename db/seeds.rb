@@ -1,8 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-User.create(username: 'admin', password: 'password', password_confirmation: 'password')
+User.create(id: 1, username: 'admin', password: 'password', password_confirmation: 'password')
+User.new(id: 2, username: 'Callie A').save(validate: false)
+User.new(id: 3, username: 'Alf S').save(validate: false)
+User.new(id: 4, username: 'Lilly M').save(validate: false)
+
+Room.create(id: 1, user_id: 3, name: "First room", created_at: "2016-07-26 00:48:25", updated_at: "2016-07-26 00:48:25")
+Room.create(id: 2, user_id: 2, name: "Working yet?", created_at: "2016-07-26 00:50:10", updated_at: "2016-07-26 00:50:10")
+
+Message.create(id: 1, room_id: 1, user_id: 3, body: "Test 1", created_at: "2016-07-26 00:48:33", updated_at: "2016-07-26 00:48:33")
+Message.create(id: 2, room_id: 1, user_id: 3, body: "Test 2", created_at: "2016-07-26 00:48:41", updated_at: "2016-07-26 00:48:41")
+Message.create(id: 3, room_id: 2, user_id: 2, body: "Is this data from the server?", created_at: "2016-07-26 00:50:20", updated_at: "2016-07-26 00:50:20")
+Message.create(id: 4, room_id: 2, user_id: 4, body: "Yes!", created_at: "2016-07-26 00:50:38", updated_at: "2016-07-26 00:50:38")
+Message.create(id: 5, room_id: 2, user_id: 2, body: "Cool.", created_at: "2016-07-26 00:50:50", updated_at: "2016-07-26 00:50:50")

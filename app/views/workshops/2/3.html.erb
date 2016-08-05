@@ -1,11 +1,12 @@
 <%= back_link('2/2') %>
 <small>2-3</small>
-<%= forward_link('2/4', 'Images') %>
+<%= forward_link('2/4', 'Responsive styling') %>
 
-<h1>CSS</h1>
+<h1>Style definitions</h1>
 
 <h3><%= step %></h3>
-<p>Selectors:
+<p>Styles can be defined and applied using selectors.</p>
+<p>Common selectors:</p>
 <ul>
   <li>Tag name - no prefix</li>
   <li>Class - '.' prefix</li>
@@ -13,7 +14,8 @@
 </ul></p>
 
 <h3><%= step %></h3>
-<p>Change file to:</p>
+<p>Let's remove the in-line styling and use style definitions instead.</p>
+<p>Add a <code>&lt;style&gt;&lt;/style&gt;</code> element:</p>
 <pre>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -24,130 +26,32 @@
 &lt;/head&gt;
 
 &lt;style&gt;
-body { font-family: arial, sans-serif; }
-#logo { font-size: 1.5em; color: #48d; }
-#rooms { background-color: #48d; color: #fff; padding: 5px; margin-top: 5px; }
-#messages { background-color: #48d; color: #fff; padding: 5px; margin-top: 5px; }
+body {
+  font-family: arial, sans-serif; }
+
+#logo {
+  font-size: 1.5em;
+  color: #48d; }
+
+#rooms_panel {
+  background-color: #48d;
+  color: #fff;
+  padding: 10px;
+  margin-top: 5px; }
+
+#messages_panel {
+  background-color: #48d;
+  color: #fff;
+  padding: 10px;
+  margin-top: 5px; }
 &lt;/style&gt;
 
 &lt;body&gt;
   &lt;div id="logo"&gt;Flatchat&lt;/div&gt;
-  &lt;div id="rooms"&gt;Rooms&lt;/div&gt;
-  &lt;div id="messages"&gt;Messages&lt;/div&gt;
+  &lt;div id="rooms_panel"&gt;Rooms&lt;/div&gt;
+  &lt;div id="messages_panel"&gt;Messages&lt;/div&gt;
 &lt;/body&gt;
 
 &lt;/html&gt;
 </pre>
-
-<h3><%= step %></h3>
-<p>Responsive styling.</p>
-<p>Adjust browser width.</p>
-<p>Add (append) to <code>style</code> element.</p>
-<pre>
-@media (max-width: 767px) {
-  #rooms {
-    max-height: 100px;
-    overflow-y: scroll;
-  }
-}
-@media (min-width: 768px) {
-  #rooms {
-    display: inline-block;
-    vertical-align: top;
-    width: 20%;
-  }
-  #messages {
-    display: inline-block;
-    vertical-align: top;
-    width: 75%;
-  }
-}
-</pre>
-<p>Reload and adjust your browser width again.</p>
-
-<h3><%= step %></h3>
-<p>Now with fake data. Note the new styles.</p>
-<pre>
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-
-&lt;head&gt;
-  &lt;title&gt;Flatchat&lt;/title&gt;
-&lt;/head&gt;
-
-&lt;style&gt;
-body { font-family: arial, sans-serif; }
-#logo { font-size: 1.5em; color: #48d; }
-#rooms_panel { background-color: #48d; color: #fff; padding: 5px; margin-top: 5px; }
-.room { padding: 5px; }
-.room:hover { background-color: #26b; cursor: pointer; }
-#messages_panel { background-color: #48d; color: #fff; padding: 5px; margin-top: 5px; }
-.message { padding: 5px; }
-.username, .time_ago { display: inline-block; color: #999; }
-.username { font-weight: 700; }
-.time_ago { font-size: 0.8em; }
-@media (max-width: 767px) {
-  .rooms {
-    max-height: 100px;
-    overflow-y: scroll;
-  }
-}
-@media (min-width: 768px) {
-  #rooms {
-    display: inline-block;
-    vertical-align: top;
-    width: 20%;
-  }
-  #messages {
-    display: inline-block;
-    vertical-align: top;
-    width: 75%;
-  }
-}
-&lt;/style&gt;
-
-&lt;body&gt;
-  &lt;div id="logo"&gt;Flatchat&lt;/div&gt;
-  &lt;div id="rooms_panel"&gt;
-    &lt;p&gt;Rooms&lt;/p&gt;
-    &lt;div class="rooms"&gt;
-      &lt;div class="room"&gt;
-        &lt;div class="username"&gt;Callie A&lt;/div&gt;
-        &lt;div class="time_ago"&gt;5 minutes ago&lt;/div&gt;
-        &lt;div class="room_name"&gt;Working yet?&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class="room"&gt;
-        &lt;div class="username"&gt;Alf S&lt;/div&gt;
-        &lt;div class="time_ago"&gt;10 minutes ago&lt;/div&gt;
-        &lt;div class="room_name"&gt;First room&lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div id="messages_panel"&gt;
-    &lt;p&gt;Messages - Working yet?&lt;/p&gt;
-    &lt;div class="message"&gt;
-      &lt;div class="username"&gt;Callie A&lt;/div&gt;
-      &lt;div class="time_ago"&gt;4 minutes ago&lt;/div&gt;
-      &lt;div class="message_body"&gt;Oh.&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class="message"&gt;
-      &lt;div class="username"&gt;Lilly M&lt;/div&gt;
-      &lt;div class="time_ago"&gt;5 minutes ago&lt;/div&gt;
-      &lt;div class="message_body"&gt;No. These are hard-coded fake messages. Sorry.&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class="message"&gt;
-      &lt;div class="username"&gt;Callie A&lt;/div&gt;
-      &lt;div class="time_ago"&gt;6 minutes ago&lt;/div&gt;
-      &lt;div class="message_body"&gt;Can I post messages now?&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;
-</pre>
-
-<h3><%= step %></h3>
-<p>Comments</p>
-<pre>
-//  This is a CSS comment.
-</pre>
+<p>Notice that the app title element has changed from an <code>h1</code> tag to <code>&lt;div id="logo"&gt;</code>. The title is now being styled by the <code>#logo</code> style definition.</p>

@@ -1,6 +1,6 @@
 <%= back_link('8/3') %>
 <small>8-4</small>
-<%= forward_link('8/5', '') %>
+<%= forward_link('8/5', 'Render messages') %>
 
 <h1>Room links</h1>
 
@@ -9,14 +9,14 @@
 <p>We will handle the links with javascript. When a link is clicked, the room messages will be loaded.</p>
 
 <h3><%= step %></h3>
-<p>Create 'assets/javasripts/get_room_messages.js'</p>
+<p>Create 'scripts/get_room_messages.js'</p>
 
 <pre>
 var bindLoadRoomOnListClick = function() {
-  $("#rooms").on("click", "a.room_link", function(event){
+  $("#rooms").on("click", ".room", function(event){
     var roomId = $(this).data("room-id");
     $.get((serverUrl + "/rooms/" + roomId + ".json"), function(room) {
-      alert(room.name);
+      alert("The server sent " + JSON.stringify(room));
     });
   });
 };
@@ -26,7 +26,8 @@ $( document ).ready(function() {
 });
 </pre>
 
-<p>Link the file in your <code>&lt;head&gt;</code></p>
+<h3><%= step %></h3>
+<p>Add to <code>&lt;head&gt;</code>, above the 'application.css' link:</p>
 <pre>
-  &lt;script type="text/javascript" src="assets/javascripts/get_room_messages.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="scripts/get_room_messages.js"&gt;&lt;/script&gt;
 </pre>

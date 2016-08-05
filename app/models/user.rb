@@ -10,16 +10,16 @@ class User < ApplicationRecord
   validates :password, length: {minimum: 6}, confirmation: true
   validate :workshop_key_is_correct
 
-  # Assign an API key on create
+  # Assign an API token on create
   before_create do |user|
-    user.api_key = user.generate_api_key
+    user.api_token = user.generate_api_token
   end
 
-  # Generate a unique API key
-  def generate_api_key
+  # Generate a unique API token
+  def generate_api_token
     loop do
       token = SecureRandom.base64.tr('+/=', 'Qrt')
-      break token unless User.exists?(api_key: token)
+      break token unless User.exists?(api_token: token)
     end
   end
 

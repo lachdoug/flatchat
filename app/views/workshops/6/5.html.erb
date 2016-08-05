@@ -5,33 +5,30 @@
 <h1>Setup forms</h1>
 
 <h3><%= step %></h3>
-<p>Create 'assets/javascripts/ajax_setup.js':</p>
+<p>Create 'scripts/ajax_setup.js':</p>
 <pre>
-var setAjaxHeaders = function() {
-  $.ajaxSetup({
-    headers: { 'Authorization' : 'Token ' + apiKey },
-    dataType: "json"
-  });
-};
-
 var bindAjaxForm = function() {
   $('form').ajaxForm({
-    error: function(response, status, xhr, form) {
-      alert(response.responseText); },
-    success: function(response, status, xhr, form) {
+    error: function(request, textStatus, errorThrown, form) {
+      alert("Ajax form failed.\nStatus: " + request.status + " " + textStatus + " " + errorThrown + "\nResponse: " + request.responseText); },
+    success: function(data, textStatus, request, form) {
+      alert("Ajax form submitted successfully!\nStatus: " + request.status + " " + textStatus + "\nResponse: " + request.responseText); },
       location.reload();
-    }
   });
 };
 
-setAjaxHeaders();
+$.ajaxSetup({
+  headers: { 'Authorization' : 'Token ' + apiToken },
+  dataType: "json"
+});
+
 $(document).ready(function() {
   bindAjaxForm();
 });
 </pre>
 
 <h3><%= step %></h3>
-<p>Create 'assets/javascripts/set_form_urls.js':</p>
+<p>Create 'scripts/set_form_urls.js':</p>
 <pre>
 $( document ).ready(function() {
   document.new_room_form.action = ( serverUrl + "/rooms.json" );
@@ -42,6 +39,6 @@ $( document ).ready(function() {
 <h3><%= step %></h3>
 <p>Link the files.</p>
 <pre>
-  &lt;script type="text/javascript" src="assets/javascripts/ajax_setup.js"&gt;&lt;/script&gt;
-  &lt;script type="text/javascript" src="assets/javascripts/set_form_urls.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="scripts/ajax_setup.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="scripts/set_form_urls.js"&gt;&lt;/script&gt;
 </pre>
