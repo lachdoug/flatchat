@@ -5,7 +5,7 @@ Rails.application.configure do
   config.workshop_key = ENV['WORKSHOP_KEY']
   config.app_host = ENV['APPLICATION_HOST'] || 'flatchat.workshops.engines.org'
   config.app_http_protocol = ENV['APPLICATION_HTTP_PROTOCOL'] || 'http' # 'http' or 'https'
-  config.app_ws_protocol = ENV['APPLICATION_HTTP_PROTOCOL'] || 'ws' # 'ws' or 'wss'
+  config.app_ws_protocol = ENV['APPLICATION_WS_PROTOCOL'] || 'ws' # 'ws' or 'wss'
 
 
   # Settings specified here will take precedence over those in config/application.rb.
